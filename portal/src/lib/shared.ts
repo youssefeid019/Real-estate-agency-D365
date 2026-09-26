@@ -8,6 +8,11 @@ export const CANCELLATION_REASONS = {
 
 export type CancellationReason = keyof typeof CANCELLATION_REASONS;
 
+// How often block booking sessions repeat
+export const FREQUENCIES = { Weekly: 100000000, "Every two weeks": 100000001, Daily: 100000002 } as const;
+
+export type Frequency = keyof typeof FREQUENCIES;
+
 export const FACILITY_TYPES = { Pitch: 100000000, IndoorCourt: 100000001, SwimmingPool: 100000002 } as const;
 
 // Opening hours and slot size

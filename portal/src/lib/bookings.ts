@@ -33,7 +33,7 @@ export function requireText(value: unknown, field: string, max: number): string 
   return value.trim();
 }
 
-function requireDateTime(value: unknown, field: string): string {
+export function requireDateTime(value: unknown, field: string): string {
   const date = typeof value === "string" ? new Date(value) : undefined;
   if (!date || isNaN(date.getTime()) || !/(Z|[+-]\d{2}:?\d{2})$/i.test(value as string))
     throw new ApiError(400, `${field} must be an ISO 8601 date-time with a time zone, e.g. 2026-10-01T10:00:00Z.`);

@@ -7,11 +7,13 @@ import {
   findContact,
   findOwnedBooking,
   parseReference,
+  requireDateTime,
   requireEmail,
   requireText,
   type DvList,
   type DvRecord,
 } from "./bookings";
+import { FREQUENCIES, type Frequency } from "./shared";
 
 // Choice values and formats
 const LEAD_SOURCE_WEB = 8;
@@ -40,6 +42,19 @@ function requireDate(value: unknown, field: string): string {
   return value;
 }
 
+function requireSessionHours(value: unknown): number {
+  const n = typeof value === "string" ? Number(value) : value;
+  if (typeof n !== "number" || !Number.isFinite(n) || n < 0.5 || n > 12 || (n * 2) % 1 !== 0)
+    throw new ApiError(400, "sessionHours must be from 0.5 to 12 in half hours.");
+  return n;
+}
+
+function requireFrequency(value: unknown): number {
+  if (typeof value !== "string" || !(value in FREQUENCIES))
+    throw new ApiError(400, `frequency must be one of: ${Object.keys(FREQUENCIES).join(", ")}.`);
+  return FREQUENCIES[value as Frequency];
+}
+
 function requireFacilityCode(value: unknown): string {
   const code = requireText(value, "facilityCode", 100);
   if (!FACILITY_CODE.test(code)) throw new ApiError(404, "Unknown facility code.");
@@ -60,6 +75,9 @@ export async function createEnquiry(input: Record<string, unknown>): Promise<Enq
   const groupSize = requireWholeNumber(input.groupSize, "groupSize", 1, 10000);
   const sessions = requireWholeNumber(input.sessions, "sessions", 1, 1000);
   const preferredStart = requireDate(input.preferredStart, "preferredStart");
+  const firstSession = requireDateTime(input.firstSession, "firstSession");
+  const sessionHours = requireSessionHours(input.sessionHours);
+  const frequency = requireFrequency(input.frequency);
   const message = optionalText(input.message, "message", 2000);
 
   const [contactId, existingAccountId] = await Promise.all([findContact(email), findAccount(company)]);
@@ -81,6 +99,9 @@ export async function createEnquiry(input: Record<string, unknown>): Promise<Enq
     ye_groupsize: groupSize,
     ye_sessions: sessions,
     ye_preferredstart: preferredStart,
+    ye_firstsession: firstSession,
+    ye_sessionhours: sessionHours,
+    ye_frequency: frequency,
     ...(contactId ? { "parentcontactid@odata.bind": `/contacts(${contactId})` } : {}),
     "parentaccountid@odata.bind": `/accounts(${accountId})`,
   });
