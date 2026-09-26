@@ -1,0 +1,43 @@
+<appaction uniquename="ye_BookFacility_ye_facility_MainGrid">
+  <appmoduleid>
+    <uniquename>ye_SportsFacility</uniquename>
+  </appmoduleid>
+  <buttonaccessibilitytext default="Book facility">
+    <label description="Book facility" languagecode="1033" />
+  </buttonaccessibilitytext>
+  <buttonlabeltext default="Book facility">
+    <label description="Book facility" languagecode="1033" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Open a new booking.">
+    <label description="Open a new booking." languagecode="1033" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Book facility">
+    <label description="Book facility" languagecode="1033" />
+  </buttontooltiptitle>
+  <context>1</context>
+  <contextentity>
+    <logicalname>ye_facility</logicalname>
+  </contextentity>
+  <contextvalue>ye_facility</contextvalue>
+  <hidden>0</hidden>
+  <iconwebresourceid>
+    <webresourceid>3ca255a1-adb9-f111-aaaf-7ced8d2c3b00</webresourceid>
+  </iconwebresourceid>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>1</location>
+  <name>Book facility (ye_facility, MainGrid)</name>
+  <onclickeventjavascriptfunctionname>YE.Commands.bookFacility</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>e8fb9277-c5b9-f111-aaaf-7ced8d49c94e</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>5.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

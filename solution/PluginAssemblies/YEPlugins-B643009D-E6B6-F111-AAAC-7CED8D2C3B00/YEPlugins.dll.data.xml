@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5" PluginAssemblyId="b643009d-e6b6-f111-aaac-7ced8d2c3b00" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/YEPlugins-B643009D-E6B6-F111-AAAC-7CED8D2C3B00/YEPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="YE.Plugins.BookingOverlapValidationPlugin, YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5" PluginTypeId="ba43009d-e6b6-f111-aaac-7ced8d2c3b00" Name="YE.Plugins.BookingOverlapValidationPlugin">
+      <FriendlyName>BookingOverlapValidationPlugin</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="YE.Plugins.BookingPaymentPlugin, YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5" PluginTypeId="6da280fe-d1b9-f111-aaaf-7ced8d49c94e" Name="YE.Plugins.BookingPaymentPlugin">
+      <FriendlyName>BookingPaymentPlugin</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="YE.Plugins.BookingPricingPlugin, YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5" PluginTypeId="bb43009d-e6b6-f111-aaac-7ced8d2c3b00" Name="YE.Plugins.BookingPricingPlugin">
+      <FriendlyName>BookingPricingPlugin</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="YE.Plugins.CreateBlockBookingsApi, YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5" PluginTypeId="034b7b04-d2b9-f111-aaaf-7ced8d49c94e" Name="YE.Plugins.CreateBlockBookingsApi">
+      <FriendlyName>CreateBlockBookingsApi</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="YE.Plugins.OpportunityPricingPlugin, YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5" PluginTypeId="ff4a7b04-d2b9-f111-aaaf-7ced8d49c94e" Name="YE.Plugins.OpportunityPricingPlugin">
+      <FriendlyName>OpportunityPricingPlugin</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

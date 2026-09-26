@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{11497c94-cdb9-f111-aaaf-7ced8d49c94e}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" id="{9898ea15-7fb1-e7af-3cc1-2aa13ce217fe}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Case" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="report" showlabel="true" showbar="false" IsUserDefined="0" id="{adbf2a28-df8b-598a-ef2b-8d0372dfeedb}">
+                  <labels>
+                    <label description="Report" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{afff9ae6-9810-e203-ed3a-351f2bdc7f48}">
+                        <labels>
+                          <label description="Case Number" languagecode="1033" />
+                        </labels>
+                        <control id="ticketnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ticketnumber" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a08b37cc-946f-8bc2-01d8-ae40f238fd81}">
+                        <labels>
+                          <label description="Problem" languagecode="1033" />
+                        </labels>
+                        <control id="title" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="title" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{23418f67-595f-9847-43d3-c1b657e45fd2}">
+                        <labels>
+                          <label description="Reported By" languagecode="1033" />
+                        </labels>
+                        <control id="customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="customerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3d07e4c5-66bc-deff-6f0d-60bae39c5d2e}">
+                        <labels>
+                          <label description="Facility" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{31566c4a-993a-9ac6-e4c3-e79ea345101f}">
+                        <labels>
+                          <label description="Related Booking" languagecode="1033" />
+                        </labels>
+                        <control id="ye_booking" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_booking" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1f16bfbf-a13b-c41d-fd16-a75667c0da27}">
+                        <labels>
+                          <label description="Origin" languagecode="1033" />
+                        </labels>
+                        <control id="caseorigincode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="caseorigincode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9e59e1c8-beb8-cd1f-054d-940e6cefa07b}">
+                        <labels>
+                          <label description="Details" languagecode="1033" />
+                        </labels>
+                        <control id="description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="triage" showlabel="true" showbar="false" IsUserDefined="0" id="{e5076454-fca8-bcfa-8730-7e1b049ec5d7}">
+                  <labels>
+                    <label description="Triage &amp; repair" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1562d047-e1de-f727-0d68-d95a01293341}">
+                        <labels>
+                          <label description="Priority" languagecode="1033" />
+                        </labels>
+                        <control id="prioritycode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="prioritycode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c3ca2a56-44e3-752b-a7e3-8bcb7d79d77e}">
+                        <labels>
+                          <label description="Takes Facility Out of Service" languagecode="1033" />
+                        </labels>
+                        <control id="ye_takesoutofservice" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="ye_takesoutofservice" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b653388a-e87a-4218-94b6-82c2b184bc83}">
+                        <labels>
+                          <label description="Expected Back in Service" languagecode="1033" />
+                        </labels>
+                        <control id="ye_expectedreturn" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_expectedreturn" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{db874bd4-8d6e-7eda-a0bd-22d3da5dc221}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="affected" id="{24a7de82-f24c-0c7c-4312-a0917ff2cab6}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Affected bookings" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="affected_grid" showlabel="true" showbar="false" IsUserDefined="0" id="{0668213e-6bb5-f24e-604d-1d833d68bad2}">
+                  <labels>
+                    <label description="Bookings on this facility during the closure (reschedule or cancel them)" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{32c660b0-83c6-e0ed-d93b-3fd72d558e6c}" showlabel="true" rowspan="8" colspan="1">
+                        <labels>
+                          <label description="Affected bookings" languagecode="1033" />
+                        </labels>
+                        <control id="case_affected_bookings" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>ye_booking</TargetEntityType>
+                            <ViewId>{be800be2-d2b9-f111-aaaf-7c1e5237236a}</ViewId>
+                            <RelationshipName>ye_incident_ye_booking_maintenancecase</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="YE Maintenance Case" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Facility problem for the YE Facility Maintenance Process." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

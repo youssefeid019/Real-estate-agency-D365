@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{242187cb-35b9-f111-aaaf-7ced8d2c3b00}" Name="YE - Maintenance Case Closed or Cleared: Facility Available" Description="Maintenance: when a Case is resolved or cancelled, or its out-of-service flag is cleared, marks the Facility Available unless another open out-of-service Case remains." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/YE-MaintenanceCaseClosedorClearedFacilityAvailable-242187CB-35B9-F111-AAAF-7CED8D2C3B00.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="YE - Maintenance Case Closed or Cleared: Facility Available" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Maintenance: when a Case is resolved or cancelled, or its out-of-service flag is cleared, marks the Facility Available unless another open out-of-service Case remains." />
+  </Descriptions>
+</Workflow>

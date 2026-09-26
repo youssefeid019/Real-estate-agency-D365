@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_block_booking_deal_is_lost": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "opportunity",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "statecode eq 2 and _ye_facility_value ne null",
+              "subscriptionRequest/filteringattributes": "statecode"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Create_follow_up_task": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "CreateRecord"
+            },
+            "parameters": {
+              "entityName": "tasks",
+              "item/subject": "Follow up lost deal: @{triggerOutputs()?['body/name']}",
+              "item/description": "The deal was lost. Check in before next season: has anything changed (schedule, budget, facility)?",
+              "item/regardingobjectid_opportunity_task@odata.bind": "/opportunities(@{triggerOutputs()?['body/opportunityid']})",
+              "item/scheduledend": "@addDays(utcNow(), 90)",
+              "item/ownerid_task@odata.bind": "@{if(contains(string(triggerOutputs()?['body/_ownerid_type']), 'team'), concat('/teams(', triggerOutputs()?['body/_ownerid_value'], ')'), concat('/systemusers(', triggerOutputs()?['body/_ownerid_value'], ')'))}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

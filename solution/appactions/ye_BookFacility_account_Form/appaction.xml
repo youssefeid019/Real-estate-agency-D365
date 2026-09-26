@@ -1,0 +1,43 @@
+<appaction uniquename="ye_BookFacility_account_Form">
+  <appmoduleid>
+    <uniquename>ye_SportsFacility</uniquename>
+  </appmoduleid>
+  <buttonaccessibilitytext default="Book facility">
+    <label description="Book facility" languagecode="1033" />
+  </buttonaccessibilitytext>
+  <buttonlabeltext default="Book facility">
+    <label description="Book facility" languagecode="1033" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Open a new booking for this organisation.">
+    <label description="Open a new booking for this organisation." languagecode="1033" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Book facility">
+    <label description="Book facility" languagecode="1033" />
+  </buttontooltiptitle>
+  <context>1</context>
+  <contextentity>
+    <logicalname>account</logicalname>
+  </contextentity>
+  <contextvalue>account</contextvalue>
+  <hidden>0</hidden>
+  <iconwebresourceid>
+    <webresourceid>3ca255a1-adb9-f111-aaaf-7ced8d2c3b00</webresourceid>
+  </iconwebresourceid>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Book facility (account, Form)</name>
+  <onclickeventjavascriptfunctionname>YE.Commands.bookFacility</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>e8fb9277-c5b9-f111-aaaf-7ced8d49c94e</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>5.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

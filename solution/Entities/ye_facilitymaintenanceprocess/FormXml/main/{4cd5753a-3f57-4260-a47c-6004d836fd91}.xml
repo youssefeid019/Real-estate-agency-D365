@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4cd5753a-3f57-4260-a47c-6004d836fd91}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{bfadcdaa-1bfe-f63a-bde0-bc993cb35dcf}" name="StageStep2" locklevel="0" expanded="true" visible="false" labelid="{0a6300c6-b83e-4733-b759-70e09522ccf1}">
+          <labels>
+            <label description="Report" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{9c75844f-0b07-dcf4-208b-63703cf4cdd2}" name="StageStep2_section1" labelid="{ae07ff91-c546-4545-a3c2-aa43e10202be}">
+                  <labels>
+                    <label description="Report" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{6fd1fe73-525e-bf36-8f83-b405c1553206}" showlabel="true" visible="true" labelid="{ae1c808e-78cd-425f-a325-e4542f12fce6}">
+                        <labels>
+                          <label description="Reported By" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:customerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="customerid" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fcd38672-4445-133a-81a4-427af629b848}" showlabel="true" visible="true" labelid="{48c5eb17-c791-4474-bfba-755a2003a3a1}">
+                        <labels>
+                          <label description="Facility" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:ye_facility" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ye_facility" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c6bf4227-67da-113d-95c6-b7298c3b698a}" showlabel="true" visible="true" labelid="{c3a3d76f-c53c-4841-a98c-c612b89f59bf}">
+                        <labels>
+                          <label description="Related Booking" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:ye_booking" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ye_booking" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e65f112d-75f0-4733-9bbc-7218f2204547}" showlabel="true" visible="true" labelid="{6a1a8994-d673-44ec-94ab-afcadd75e9cc}">
+                        <labels>
+                          <label description="Problem" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:title" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="title" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{37406678-e749-173e-af85-f185b0d80546}" name="StageStep11" locklevel="0" expanded="true" visible="false" labelid="{179ada6e-5a75-4e11-a0c1-75e4b5cbafda}">
+          <labels>
+            <label description="Triage" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{52fa7144-a531-ecd5-f015-a6e2cfec5fa6}" name="StageStep11_section1" labelid="{d90b0872-751a-45f8-a94d-58828d334621}">
+                  <labels>
+                    <label description="Triage" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{60167445-efa4-ef35-ac48-2bba015f1fa2}" showlabel="true" visible="true" labelid="{fa29aba0-cc9c-4a46-b2fd-6832f38f5c10}">
+                        <labels>
+                          <label description="Priority" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:prioritycode" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="prioritycode" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1d26dc27-dd2d-dc33-b307-4acd64248da3}" showlabel="true" visible="true" labelid="{61d3312e-c4d8-4c85-9799-0454f2559d82}">
+                        <labels>
+                          <label description="Takes Facility Out of Service?" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:ye_takesoutofservice" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="ye_takesoutofservice" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ee5ef9d-dfda-f135-8bce-38e74a1574c3}" showlabel="true" visible="true" labelid="{6c3faba0-780f-4926-94a0-224de9484814}">
+                        <labels>
+                          <label description="Assigned To" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:ownerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ownerid" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{069e5d74-9abc-eb37-8f14-efed7c17c9d2}" name="StageStep18" locklevel="0" expanded="true" visible="false" labelid="{1319cfe0-21d0-48a4-9d63-1c68a620899b}">
+          <labels>
+            <label description="Repair" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{7dcaaae6-c288-d11b-576f-b380c934eb38}" name="StageStep18_section1" labelid="{1ae78261-0c72-4328-8fca-e5d8275926ac}">
+                  <labels>
+                    <label description="Repair" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b7289073-8f76-e439-9efa-1747687df20a}" showlabel="true" visible="true" labelid="{69a34186-53e3-424f-98fe-909d9aaf224f}">
+                        <labels>
+                          <label description="Expected Back in Service" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:ye_expectedreturn" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="ye_expectedreturn" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7103a504-bdbd-7c39-a208-82ec5ce5d746}" showlabel="true" visible="true" labelid="{80fa35f3-a9c0-4a86-913e-7a2e93d26e60}">
+                        <labels>
+                          <label description="Repair Notes" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_incident_ye_facilitymaintenanceprocess:description" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="description" disabled="false" relationship="bpf_incident_ye_facilitymaintenanceprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{930dcb4b-945c-3031-bac2-82ace8fdee0d}" name="StageStep23" locklevel="0" expanded="true" visible="false" labelid="{e2ee670b-e832-4956-8756-cdbc664ac4fe}">
+          <labels>
+            <label description="Resolve" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{92a169d5-2627-3002-75a4-5cef7bac4bcb}" name="StageStep23_section1" labelid="{ce9c9ca3-52e4-45b5-bd7f-c737f3083582}">
+                  <labels>
+                    <label description="Resolve" languagecode="1033" />
+                  </labels>
+                  <rows />
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

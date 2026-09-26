@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cd0d48a0-10c6-ec11-a7b5-000d3a58b83a}</formid>
+    <IntroducedVersion>9.1.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form enablerelatedinformation="false" shownavigationbar="true" hasmargin="false" headerdensity="HighWithControls" showinformselector="true">
+      <tabs showlabels="true">
+        <tab name="general" verticallayout="true" id="{564b9a08-4626-46f5-8bd8-3d31e17a8873}" IsUserDefined="0" labelid="{9d6e9f7c-5fb8-47a7-8d84-a6f1b8c14d4c}" ordinalvalue="0">
+          <columns>
+            <column width="50%" id="0">
+              <sections>
+                <section name="Details" showlabel="true" labelwidth="102" showbar="false" id="{009d6b41-2e89-4e88-888a-5a85069812cf}" IsUserDefined="0" locklevel="0" celllabelposition="Left" labelid="{877909e0-01b8-47f4-a7a6-679bea967005}" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{70cc3529-ab81-650b-3bd0-3147ba77667d}" showlabel="true" locklevel="0" labelid="{91d272af-7129-476e-89f9-b614431a3b23}" ordinalvalue="10004" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{e41713a5-756a-48b8-8b50-78a110be3b9e}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10005" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{2973ce06-0486-461f-9381-48a174703d01}" labelid="{28f0bd75-eba6-45da-b7bb-120e65dc0b5a}" colspan="1" rowspan="1" ordinalvalue="10006" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" id="{7d716e7b-bccd-4984-afce-02c47a9753c4}" labelid="{829a8f89-e2a0-4d03-ba96-3b512975fa31}" colspan="1" ordinalvalue="10007" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{b6f69544-6287-4b8a-b60c-3d66f1cac75d}" userspacer="0" labelid="{b0657f85-3861-41de-b7df-365a56f0e2ac}" colspan="1" rowspan="1" ordinalvalue="10008" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{76d17ce6-ce11-da3c-aeee-e2886e506221}" showlabel="true" locklevel="0" labelid="{3087d99a-22c1-46b9-8323-ae33bf3bef3f}" colspan="1" rowspan="1" ordinalvalue="10009" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{06c03248-3a7c-4390-a9cb-9e04c67af769}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10010" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{314d562e-f94f-488e-809f-d955f6bad0aa}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10011" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{959273e2-e600-3b18-6572-763b94414e67}" showlabel="true" locklevel="0" labelid="{835fd596-f012-42c7-a4c9-cb5669b5eb19}" ordinalvalue="10012" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{f1666d82-c919-4cba-a277-24b45cfdd4ca}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10013" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{9a7c56a5-4244-4f8f-ad2f-ff5d798c68fb}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10014" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{496229b9-be84-44b4-9024-f0d869f2d272}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10015" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{4b0aaf3f-4e96-4679-9b60-084974ee40c1}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10016" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{6df81f34-2207-487e-b171-3e7790ce5cee}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Facility" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" disabled="false" uniqueid="{91d8582a-0ac9-4b68-9f96-986b8a884588}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="ye_facilitymaintenance" showlabel="true" showbar="false" IsUserDefined="0" id="{76455878-b46c-ea59-b393-892bda4e041d}" ordinalvalue="5" solutionaction="Added">
+                  <labels>
+                    <label description="Facility maintenance" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7def45d6-5def-1171-5c7a-2a081a64d03a}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Takes Facility Out of Service" languagecode="1033" />
+                        </labels>
+                        <control id="ye_takesoutofservice" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="ye_takesoutofservice" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{80fca1c4-b2da-fd40-1afe-993990f95325}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Expected Back in Service" languagecode="1033" />
+                        </labels>
+                        <control id="ye_expectedreturn" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_expectedreturn" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{de12fe97-ba1e-64cf-b39d-3223475d7b64}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Related Booking" languagecode="1033" />
+                        </labels>
+                        <control id="ye_booking" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_booking" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Enhanced full case form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Enhanced full case form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

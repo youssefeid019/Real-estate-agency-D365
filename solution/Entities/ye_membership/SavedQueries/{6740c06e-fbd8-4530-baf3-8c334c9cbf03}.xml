@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{6740c06e-fbd8-4530-baf3-8c334c9cbf03}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="ye_name" select="1" icon="1" preview="1">
+        <row name="result" id="ye_membershipid">
+          <cell name="ye_member" width="180" />
+          <cell name="ye_status" width="100" />
+          <cell name="ye_discountpercentage" width="110" />
+          <cell name="ye_startdate" width="110" />
+          <cell name="ye_enddate" width="110" />
+          <cell name="ye_name" width="160" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ye_membership">
+          <attribute name="ye_member" />
+          <attribute name="ye_status" />
+          <attribute name="ye_discountpercentage" />
+          <attribute name="ye_startdate" />
+          <attribute name="ye_enddate" />
+          <attribute name="ye_name" />
+          <attribute name="ye_membershipid" />
+          <order attribute="ye_enddate" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Memberships" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Active membership records with discount and validity." languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

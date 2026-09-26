@@ -1,0 +1,138 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_an_opportunity_is_won": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "opportunity",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "statecode",
+              "subscriptionRequest/filterexpression": "statecode eq 1"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "List_existing_bookings_for_opportunity": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords"
+            },
+            "parameters": {
+              "entityName": "ye_bookings",
+              "$select": "ye_bookingid",
+              "$filter": "_ye_opportunity_value eq @{triggerOutputs()?['body/opportunityid']}",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "If_facility_and_member_set_and_no_booking_yet": {
+          "type": "If",
+          "runAfter": {
+            "List_existing_bookings_for_opportunity": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@length(outputs('List_existing_bookings_for_opportunity')?['body/value'])",
+                  0
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@empty(triggerOutputs()?['body/_ye_facility_value'])",
+                    true
+                  ]
+                }
+              },
+              {
+                "or": [
+                  {
+                    "not": {
+                      "equals": [
+                        "@empty(triggerOutputs()?['body/_parentaccountid_value'])",
+                        true
+                      ]
+                    }
+                  },
+                  {
+                    "not": {
+                      "equals": [
+                        "@empty(triggerOutputs()?['body/_parentcontactid_value'])",
+                        true
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "actions": {
+            "Create_draft_bookings_for_the_sessions": {
+              "type": "OpenApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "PerformUnboundAction"
+                },
+                "parameters": {
+                  "actionName": "ye_CreateBlockBookings",
+                  "item/OpportunityId": "@triggerOutputs()?['body/opportunityid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

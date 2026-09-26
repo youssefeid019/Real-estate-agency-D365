@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_the_portal_creates_an_enquiry": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "lead",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "leadsourcecode eq 8"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Create_call_back_task": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "CreateRecord"
+            },
+            "parameters": {
+              "entityName": "tasks",
+              "item/subject": "Call back: @{triggerOutputs()?['body/fullname']} (@{triggerOutputs()?['body/companyname']}) about their group enquiry",
+              "item/description": "Web enquiry for @{triggerOutputs()?['body/ye_groupsize']} people, @{triggerOutputs()?['body/ye_sessions']} sessions. Qualify it in the YE Corporate Booking Process.",
+              "item/regardingobjectid_lead_task@odata.bind": "/leads(@{triggerOutputs()?['body/leadid']})",
+              "item/scheduledend": "@addDays(utcNow(), 1)",
+              "item/prioritycode": 2,
+              "item/ownerid_task@odata.bind": "/teams(340b8962-a8b9-f111-aaaf-7ced8d49c94e)"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

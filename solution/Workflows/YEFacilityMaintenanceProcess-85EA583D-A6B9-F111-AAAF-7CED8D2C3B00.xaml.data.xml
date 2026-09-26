@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{85ea583d-a6b9-f111-aaaf-7ced8d2c3b00}" Name="YE Facility Maintenance Process" Description="Facility issues reported by customers (portal) or staff: report, triage (does it take the facility out of service?), repair, resolve." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/YEFacilityMaintenanceProcess-85EA583D-A6B9-F111-AAAF-7CED8D2C3B00.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>0</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>ye_facilitymaintenanceprocess</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>Incident</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="YE Facility Maintenance Process" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Facility issues reported by customers (portal) or staff: report, triage (does it take the facility out of service?), repair, resolve." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{bfadcdaa-1bfe-f63a-bde0-bc993cb35dcf}">
+      <label languagecode="1033" description="Report" />
+    </steplabels>
+    <steplabels id="{6fd1fe73-525e-bf36-8f83-b405c1553206}">
+      <label languagecode="1033" description="Reported By" />
+    </steplabels>
+    <steplabels id="{fcd38672-4445-133a-81a4-427af629b848}">
+      <label languagecode="1033" description="Facility" />
+    </steplabels>
+    <steplabels id="{c6bf4227-67da-113d-95c6-b7298c3b698a}">
+      <label languagecode="1033" description="Related Booking" />
+    </steplabels>
+    <steplabels id="{e65f112d-75f0-4733-9bbc-7218f2204547}">
+      <label languagecode="1033" description="Problem" />
+    </steplabels>
+    <steplabels id="{37406678-e749-173e-af85-f185b0d80546}">
+      <label languagecode="1033" description="Triage" />
+    </steplabels>
+    <steplabels id="{60167445-efa4-ef35-ac48-2bba015f1fa2}">
+      <label languagecode="1033" description="Priority" />
+    </steplabels>
+    <steplabels id="{1d26dc27-dd2d-dc33-b307-4acd64248da3}">
+      <label languagecode="1033" description="Takes Facility Out of Service?" />
+    </steplabels>
+    <steplabels id="{0ee5ef9d-dfda-f135-8bce-38e74a1574c3}">
+      <label languagecode="1033" description="Assigned To" />
+    </steplabels>
+    <steplabels id="{069e5d74-9abc-eb37-8f14-efed7c17c9d2}">
+      <label languagecode="1033" description="Repair" />
+    </steplabels>
+    <steplabels id="{b7289073-8f76-e439-9efa-1747687df20a}">
+      <label languagecode="1033" description="Expected Back in Service" />
+    </steplabels>
+    <steplabels id="{7103a504-bdbd-7c39-a208-82ec5ce5d746}">
+      <label languagecode="1033" description="Repair Notes" />
+    </steplabels>
+    <steplabels id="{930dcb4b-945c-3031-bac2-82ace8fdee0d}">
+      <label languagecode="1033" description="Resolve" />
+    </steplabels>
+    <steplabels id="{37fd4158-6f3e-0530-988e-f73619a5ccfe}">
+      <label languagecode="1033" description="Resolve Case" />
+    </steplabels>
+  </labels>
+</Workflow>

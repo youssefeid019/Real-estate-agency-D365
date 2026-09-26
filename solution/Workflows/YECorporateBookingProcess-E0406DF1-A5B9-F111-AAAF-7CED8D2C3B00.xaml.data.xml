@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{e0406df1-a5b9-f111-aaaf-7ced8d2c3b00}" Name="YE Corporate Booking Process" Description="Group and corporate block bookings: qualify the enquiry (lead), develop and propose the opportunity, close it. Winning it creates the Draft booking for a coordinator to schedule." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/YECorporateBookingProcess-E0406DF1-A5B9-F111-AAAF-7CED8D2C3B00.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>0</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>ye_corporatebookingprocess</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>Lead</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="YE Corporate Booking Process" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Group and corporate block bookings: qualify the enquiry (lead), develop and propose the opportunity, close it. Winning it creates the Draft booking for a coordinator to schedule." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{f1135a61-c849-7d33-b69d-4f6be56692af}">
+      <label languagecode="1033" description="Qualify" />
+    </steplabels>
+    <steplabels id="{122e9f65-ac00-ca3b-8af0-c0a590a0229f}">
+      <label languagecode="1033" description="Company (Account)" />
+    </steplabels>
+    <steplabels id="{4b246364-2fc0-1433-9948-75e00e548a29}">
+      <label languagecode="1033" description="Existing Contact?" />
+    </steplabels>
+    <steplabels id="{c17bd87d-51bd-bd3a-a735-7cc4c31dccab}">
+      <label languagecode="1033" description="Email" />
+    </steplabels>
+    <steplabels id="{137198cb-e8bf-253e-b4d1-e18ae63fb0eb}">
+      <label languagecode="1033" description="Facility of Interest" />
+    </steplabels>
+    <steplabels id="{07c33d60-61bf-5631-a90c-a6cc0f0e275b}">
+      <label languagecode="1033" description="Group Size" />
+    </steplabels>
+    <steplabels id="{a6421273-c9d8-b437-b7ae-58992d11fb9b}">
+      <label languagecode="1033" description="Sessions Requested" />
+    </steplabels>
+    <steplabels id="{117285f8-0664-6b39-8e8f-09426ba3e1cd}">
+      <label languagecode="1033" description="Preferred Start" />
+    </steplabels>
+    <steplabels id="{d80ec9bc-d1fb-ed37-ac12-ed8c377c76f3}">
+      <label languagecode="1033" description="Develop" />
+    </steplabels>
+    <steplabels id="{e2057cd3-3bdb-a433-90e9-e1226c0a78a4}">
+      <label languagecode="1033" description="Account" />
+    </steplabels>
+    <steplabels id="{8e4911a4-f367-7c31-a8b1-c1a79387aa21}">
+      <label languagecode="1033" description="Contact" />
+    </steplabels>
+    <steplabels id="{36256f45-1c72-1e38-a19e-1ade677da203}">
+      <label languagecode="1033" description="Facility" />
+    </steplabels>
+    <steplabels id="{ac4eb897-e4eb-1e38-b8ff-b7a64d8a61b4}">
+      <label languagecode="1033" description="Sessions Requested" />
+    </steplabels>
+    <steplabels id="{3d681652-a0e6-0e3e-b9cd-976e04d009fa}">
+      <label languagecode="1033" description="First Session (date &amp; time)" />
+    </steplabels>
+    <steplabels id="{cd88d868-1073-a334-a0ca-3c278e1996b5}">
+      <label languagecode="1033" description="Hours per Session" />
+    </steplabels>
+    <steplabels id="{2f980504-b837-733f-8d8c-c3857e46f23a}">
+      <label languagecode="1033" description="Frequency" />
+    </steplabels>
+    <steplabels id="{6975b644-fbde-833a-8938-40ef1e9c4bda}">
+      <label languagecode="1033" description="Budget" />
+    </steplabels>
+    <steplabels id="{70778c95-cca1-7b32-9f75-b176a2c21370}">
+      <label languagecode="1033" description="Propose" />
+    </steplabels>
+    <steplabels id="{30b411e4-4be1-0a31-99ac-7f245bcaeef3}">
+      <label languagecode="1033" description="List Price (sessions × hours × rate)" />
+    </steplabels>
+    <steplabels id="{a7b7bb34-2082-ac34-9cf3-acb20b74030b}">
+      <label languagecode="1033" description="Proposal Value" />
+    </steplabels>
+    <steplabels id="{c1f30fd3-0a5d-e133-aa2d-555b8135ba2f}">
+      <label languagecode="1033" description="Proposal Presented" />
+    </steplabels>
+    <steplabels id="{5d8866f3-af89-6e35-b1d1-490c9c6f4108}">
+      <label languagecode="1033" description="Est. Close Date" />
+    </steplabels>
+    <steplabels id="{51e6b4ce-54f6-823c-a30d-59df4d147013}">
+      <label languagecode="1033" description="Close" />
+    </steplabels>
+    <steplabels id="{5c187eda-f479-eb31-80e8-29475f308b62}">
+      <label languagecode="1033" description="Final Proposal Agreed" />
+    </steplabels>
+    <steplabels id="{6e1959d8-9d95-d330-b023-c9c412f52024}">
+      <label languagecode="1033" description="Final Decision Date" />
+    </steplabels>
+  </labels>
+</Workflow>

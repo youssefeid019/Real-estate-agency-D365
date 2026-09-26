@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{2ce56d58-d1b9-f111-aaaf-7ced8d49c94e}" Name="YE - Maintenance: Flag Affected Bookings" Description="Case cycle: when a case takes a facility out of service (or its expected return date changes), upcoming bookings on that facility during the closure are marked Affected by Maintenance, for the coordinator to reschedule or cancel." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/YE-MaintenanceFlagAffectedBookings-2CE56D58-D1B9-F111-AAAF-7CED8D49C94E.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="YE - Maintenance: Flag Affected Bookings" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Case cycle: when a case takes a facility out of service (or its expected return date changes), upcoming bookings on that facility during the closure are marked Affected by Maintenance, for the coordinator to reschedule or cancel." />
+  </Descriptions>
+</Workflow>

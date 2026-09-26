@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{98eab887-37b9-f111-aaaf-7c1e5237236a}" name="YE Manager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <IsAutoAssigned>0</IsAutoAssigned>
+  <Description>Manager: reads Bookings and their Facilities, Members, Memberships and maintenance Cases across every location. Assign alongside Basic User.</Description>
+  <RolePrivileges>
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvReadContact" level="Global" />
+    <RolePrivilege name="prvReadIncident" level="Global" />
+    <RolePrivilege name="prvReadLead" level="Global" />
+    <RolePrivilege name="prvReadOpportunity" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvReadye_booking" level="Global" />
+    <RolePrivilege name="prvReadye_corporatebookingprocess" level="Global" />
+    <RolePrivilege name="prvReadye_facility" level="Global" />
+    <RolePrivilege name="prvReadye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvReadye_membership" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

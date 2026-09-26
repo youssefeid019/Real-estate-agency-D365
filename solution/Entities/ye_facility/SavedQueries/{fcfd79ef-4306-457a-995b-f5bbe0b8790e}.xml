@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{fcfd79ef-4306-457a-995b-f5bbe0b8790e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="ye_name" select="1" icon="1" preview="1">
+        <row name="result" id="ye_facilityid">
+          <cell name="ye_name" width="220" />
+          <cell name="ye_facilitycode" width="110" />
+          <cell name="ye_facilitytype" width="130" />
+          <cell name="ye_availabilitystatus" width="150" />
+          <cell name="ye_hourlyrate" width="110" />
+          <cell name="ye_capacity" width="90" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ye_facility">
+          <attribute name="ye_name" />
+          <attribute name="ye_facilitycode" />
+          <attribute name="ye_facilitytype" />
+          <attribute name="ye_availabilitystatus" />
+          <attribute name="ye_hourlyrate" />
+          <attribute name="ye_capacity" />
+          <attribute name="ye_facilityid" />
+          <order attribute="ye_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Facilities" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Every active facility with its type, availability, rate and capacity." languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f2c1778c-5620-472a-8a21-1bde2f6f6fae}</savedqueryid>
+    <layoutxml>
+      <grid name="ye_corporatebookingprocesses" jump="bpf_name" select="1" icon="1" preview="0">
+        <row name="ye_corporatebookingprocess" id="businessprocessflowinstanceid">
+          <cell name="bpf_leadid" width="300" />
+          <cell name="activestageid" width="150" />
+          <cell name="statuscode" width="150" />
+          <cell name="createdon" width="150" />
+          <cell name="processid" width="300" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ye_corporatebookingprocess">
+          <attribute name="businessprocessflowinstanceid" />
+          <attribute name="bpf_name" />
+          <attribute name="createdon" />
+          <attribute name="bpf_leadid" />
+          <attribute name="activestageid" />
+          <attribute name="statecode" />
+          <attribute name="statuscode" />
+          <attribute name="createdby" />
+          <attribute name="processid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="YE Corporate Booking Process Lookup View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

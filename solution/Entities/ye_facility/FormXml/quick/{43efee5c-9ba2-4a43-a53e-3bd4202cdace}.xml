@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{43efee5c-9ba2-4a43-a53e-3bd4202cdace}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{e49c0303-0089-1d7a-dc97-26a4ed5798d4}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="qv_facility" showlabel="true" showbar="false" IsUserDefined="0" id="{bb1d6c51-cd2a-5331-89bb-887ee91ab6ff}">
+                  <labels>
+                    <label description="Facility" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{64c7ac15-a5aa-796a-e76f-13853e02a086}">
+                        <labels>
+                          <label description="Hourly Rate" languagecode="1033" />
+                        </labels>
+                        <control id="ye_hourlyrate" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="ye_hourlyrate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{72804406-a3ce-d548-c4c0-b49aa0480d55}">
+                        <labels>
+                          <label description="Facility Type" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facilitytype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_facilitytype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f86aad25-daab-28da-c7b4-41102282a0fe}">
+                        <labels>
+                          <label description="Availability" languagecode="1033" />
+                        </labels>
+                        <control id="ye_availabilitystatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_availabilitystatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a3dfaf1-1c3a-f995-cd31-8ac606620af9}">
+                        <labels>
+                          <label description="Capacity" languagecode="1033" />
+                        </labels>
+                        <control id="ye_capacity" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_capacity" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

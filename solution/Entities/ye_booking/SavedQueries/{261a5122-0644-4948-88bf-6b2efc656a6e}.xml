@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{261a5122-0644-4948-88bf-6b2efc656a6e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="ye_bookingreference" select="1" icon="1" preview="1">
+        <row name="result" id="ye_bookingid">
+          <cell name="ye_bookingreference" width="120" />
+          <cell name="ye_facility" width="180" />
+          <cell name="ye_customer" width="160" />
+          <cell name="ye_starttime" width="150" />
+          <cell name="ye_endtime" width="150" />
+          <cell name="ye_status" width="100" />
+          <cell name="ye_totalprice" width="110" />
+          <cell name="ye_paymentstatus" width="120" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ye_booking">
+          <attribute name="ye_bookingreference" />
+          <attribute name="ye_facility" />
+          <attribute name="ye_customer" />
+          <attribute name="ye_starttime" />
+          <attribute name="ye_endtime" />
+          <attribute name="ye_status" />
+          <attribute name="ye_totalprice" />
+          <attribute name="ye_paymentstatus" />
+          <attribute name="ye_bookingid" />
+          <order attribute="ye_starttime" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Bookings" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="All active bookings, most recent first." languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

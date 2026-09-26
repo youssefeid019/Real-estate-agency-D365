@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{abeab887-37b9-f111-aaaf-7c1e5237236a}" name="YE Portal Integration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <IsAutoAssigned>0</IsAutoAssigned>
+  <Description>Customer portal API (application user): Create/Read/Write Bookings and Contacts organization-wide, Read Facilities and Memberships, create group enquiries (Leads) and problem reports (Cases) and read Cases to track them. No Delete privilege on anything.</Description>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendAccount" level="Global" />
+    <RolePrivilege name="prvAppendContact" level="Global" />
+    <RolePrivilege name="prvAppendIncident" level="Global" />
+    <RolePrivilege name="prvAppendLead" level="Global" />
+    <RolePrivilege name="prvAppendToAccount" level="Global" />
+    <RolePrivilege name="prvAppendToContact" level="Global" />
+    <RolePrivilege name="prvAppendToIncident" level="Global" />
+    <RolePrivilege name="prvAppendToLead" level="Global" />
+    <RolePrivilege name="prvAppendToWorkflow" level="Global" />
+    <RolePrivilege name="prvAppendToye_booking" level="Global" />
+    <RolePrivilege name="prvAppendToye_facility" level="Global" />
+    <RolePrivilege name="prvAppendye_booking" level="Global" />
+    <RolePrivilege name="prvAppendye_corporatebookingprocess" level="Global" />
+    <RolePrivilege name="prvAppendye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvCreateAccount" level="Global" />
+    <RolePrivilege name="prvCreateContact" level="Global" />
+    <RolePrivilege name="prvCreateIncident" level="Global" />
+    <RolePrivilege name="prvCreateLead" level="Global" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvCreateye_booking" level="Global" />
+    <RolePrivilege name="prvCreateye_corporatebookingprocess" level="Global" />
+    <RolePrivilege name="prvCreateye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvReadAccount" level="Global" />
+    <RolePrivilege name="prvReadContact" level="Global" />
+    <RolePrivilege name="prvReadIncident" level="Global" />
+    <RolePrivilege name="prvReadLead" level="Basic" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvReadWorkflow" level="Global" />
+    <RolePrivilege name="prvReadye_booking" level="Global" />
+    <RolePrivilege name="prvReadye_corporatebookingprocess" level="Global" />
+    <RolePrivilege name="prvReadye_facility" level="Global" />
+    <RolePrivilege name="prvReadye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvReadye_membership" level="Global" />
+    <RolePrivilege name="prvWriteAccount" level="Global" />
+    <RolePrivilege name="prvWriteContact" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+    <RolePrivilege name="prvWriteye_booking" level="Global" />
+    <RolePrivilege name="prvWriteye_corporatebookingprocess" level="Global" />
+    <RolePrivilege name="prvWriteye_facilitymaintenanceprocess" level="Global" />
+  </RolePrivileges>
+</Role>

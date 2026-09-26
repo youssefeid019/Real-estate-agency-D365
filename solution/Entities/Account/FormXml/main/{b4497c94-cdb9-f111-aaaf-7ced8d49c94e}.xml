@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b4497c94-cdb9-f111-aaaf-7ced8d49c94e}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" id="{86170242-64ec-6808-249a-b74c4b82f656}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Organisation" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="organisation" showlabel="true" showbar="false" IsUserDefined="0" id="{2d2000b3-fdd3-2545-8fbc-76da62324d2e}">
+                  <labels>
+                    <label description="Organisation" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{41334344-b235-6b6f-6079-ca9fb30b4054}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3355b5ea-2ce6-ee84-3c1e-249a179781f3}">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" />
+                        </labels>
+                        <control id="primarycontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="primarycontactid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bffc70c5-6255-5955-6729-bea91acb87f6}">
+                        <labels>
+                          <label description="Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="telephone1" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bc00a991-4ea2-d2f3-a2ad-9c663df9fbea}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="emailaddress1" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="details" showlabel="true" showbar="false" IsUserDefined="0" id="{0377f557-e7ab-6b63-28fc-3312c90b2995}">
+                  <labels>
+                    <label description="Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{76dd2fdc-df3c-40a4-6218-39ba994a0223}">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="address1_city" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_city" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{22ebceee-ea08-d45c-c759-e69841c10b93}">
+                        <labels>
+                          <label description="Website" languagecode="1033" />
+                        </labels>
+                        <control id="websiteurl" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="websiteurl" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{418166ba-e70f-7c10-5a7f-4eded74ee182}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="customer" id="{f7002186-2359-07a2-9b3b-89850d1efc33}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="People, deals &amp; bookings" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="contacts" showlabel="true" showbar="false" IsUserDefined="0" id="{cf732f9f-409e-cd21-f478-cf124d43bb6e}">
+                  <labels>
+                    <label description="People" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{749879c7-bffa-3f1c-7a7e-a414db415eec}" showlabel="true" rowspan="7" colspan="1">
+                        <labels>
+                          <label description="Contacts" languagecode="1033" />
+                        </labels>
+                        <control id="account_contacts" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>contact</TargetEntityType>
+                            <ViewId>{00000000-0000-0000-00aa-000010001004}</ViewId>
+                            <RelationshipName>contact_customer_accounts</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="enquiries" showlabel="true" showbar="false" IsUserDefined="0" id="{cd461076-e2a3-0e47-61e5-f96fb89d6729}">
+                  <labels>
+                    <label description="Enquiries" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b8faad82-47a2-984f-78bc-d373d7d272f1}" showlabel="true" rowspan="6" colspan="1">
+                        <labels>
+                          <label description="Enquiries" languagecode="1033" />
+                        </labels>
+                        <control id="account_leads" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>lead</TargetEntityType>
+                            <ViewId>{4a9e21b1-adb9-f111-aaaf-7ced8d2c3b00}</ViewId>
+                            <RelationshipName>lead_parent_account</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>3</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="deals" showlabel="true" showbar="false" IsUserDefined="0" id="{bcdb95df-d62b-8691-1cc9-50d718a7d6e9}">
+                  <labels>
+                    <label description="Block-booking deals" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5a1041b8-7b30-b1f2-249c-e94aad03a2fb}" showlabel="true" rowspan="6" colspan="1">
+                        <labels>
+                          <label description="Deals" languagecode="1033" />
+                        </labels>
+                        <control id="account_opportunities" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>opportunity</TargetEntityType>
+                            <ViewId>{4f9e21b1-adb9-f111-aaaf-7ced8d2c3b00}</ViewId>
+                            <RelationshipName>opportunity_parent_account</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>3</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="bookings" showlabel="true" showbar="false" IsUserDefined="0" id="{0ff03a28-7246-5cf7-2d2b-93205c4ee7b1}">
+                  <labels>
+                    <label description="Bookings" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8ea222fb-8485-a4db-9aa8-9ef58e5b3732}" showlabel="true" rowspan="8" colspan="1">
+                        <labels>
+                          <label description="Bookings" languagecode="1033" />
+                        </labels>
+                        <control id="account_bookings" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>ye_booking</TargetEntityType>
+                            <ViewId>{261a5122-0644-4948-88bf-6b2efc656a6e}</ViewId>
+                            <RelationshipName>ye_account_ye_booking_customer</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="YE Corporate Customer" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A team, club, school or company: its people, enquiries, deals and bookings." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="OpportunityId">
+  <description default="The won opportunity.">
+    <label description="The won opportunity." languagecode="1033" />
+  </description>
+  <displayname default="Opportunity Id">
+    <label description="Opportunity Id" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>OpportunityId</name>
+  <type>12</type>
+</customapirequestparameter>

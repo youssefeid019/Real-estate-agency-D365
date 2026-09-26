@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d753258b-cb0f-4ed8-8d58-4451fc0ffd60}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" id="{7ac72f5c-9118-ffdd-ca55-6e53d3e77e2c}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="facility" showlabel="true" showbar="false" IsUserDefined="0" id="{00753099-d97a-fee5-e6f4-1a7b53998485}">
+                  <labels>
+                    <label description="Facility" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9c14d1bb-51c2-9591-e54f-ed8660ef09aa}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ye_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ye_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2e58d0eb-0f6a-a766-5553-70d8f37ad3be}">
+                        <labels>
+                          <label description="Facility Code" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facilitycode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ye_facilitycode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dda685fe-352e-5cfc-a117-547b6f8e53ef}">
+                        <labels>
+                          <label description="Facility Type" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facilitytype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_facilitytype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a24efcbc-042e-a5a7-d116-df89a3c9cfee}">
+                        <labels>
+                          <label description="Availability" languagecode="1033" />
+                        </labels>
+                        <control id="ye_availabilitystatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_availabilitystatus" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="pricing" showlabel="true" showbar="false" IsUserDefined="0" id="{c36132ab-1c08-010d-3f58-34ff14b46f34}">
+                  <labels>
+                    <label description="Pricing &amp; capacity" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{96b95a5a-5d5a-6e1a-57a5-ce00f5847f14}">
+                        <labels>
+                          <label description="Hourly Rate" languagecode="1033" />
+                        </labels>
+                        <control id="ye_hourlyrate" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="ye_hourlyrate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8f166908-f21e-31f5-c074-c1f85717e65c}">
+                        <labels>
+                          <label description="Capacity" languagecode="1033" />
+                        </labels>
+                        <control id="ye_capacity" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_capacity" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d328fc65-bdb5-142e-a838-2c117d4910d3}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="activity" id="{416d5cf7-4cbc-d083-3565-a00a2e8b2819}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Bookings &amp; maintenance" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="bookings" showlabel="true" showbar="false" IsUserDefined="0" id="{16bfb261-f03c-16de-34e0-99f3b943fef6}">
+                  <labels>
+                    <label description="Bookings" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{96cea147-6f55-ab46-9b62-20df60ae1f5e}" showlabel="true" rowspan="8" colspan="1">
+                        <labels>
+                          <label description="Bookings" languagecode="1033" />
+                        </labels>
+                        <control id="facility_bookings" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>ye_booking</TargetEntityType>
+                            <ViewId>{261a5122-0644-4948-88bf-6b2efc656a6e}</ViewId>
+                            <RelationshipName>ye_facility_ye_booking</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="cases" showlabel="true" showbar="false" IsUserDefined="0" id="{254a4a7e-1aab-2666-fa93-ec3dcb278fa4}">
+                  <labels>
+                    <label description="Maintenance cases" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{733e3d28-7ed9-0bf5-be9a-82c57f0ae1be}" showlabel="true" rowspan="8" colspan="1">
+                        <labels>
+                          <label description="Maintenance cases" languagecode="1033" />
+                        </labels>
+                        <control id="facility_cases" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>incident</TargetEntityType>
+                            <ViewId>{539e21b1-adb9-f111-aaaf-7ced8d2c3b00}</ViewId>
+                            <RelationshipName>ye_facility_incident</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b9487c94-cdb9-f111-aaaf-7ced8d49c94e}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" id="{8763ead2-dba2-1197-40c1-60215c7eeaa4}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Enquiry" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="enquiry" showlabel="true" showbar="false" IsUserDefined="0" id="{30f56aab-7047-44a4-b4b6-762e937d3fb5}">
+                  <labels>
+                    <label description="Enquiry" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8231c4d6-a59c-9e92-0d93-0ad43588e469}">
+                        <labels>
+                          <label description="Topic" languagecode="1033" />
+                        </labels>
+                        <control id="subject" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="subject" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{33b74dfd-8dff-e700-a4e3-6185f080a89d}">
+                        <labels>
+                          <label description="Company (Account)" languagecode="1033" />
+                        </labels>
+                        <control id="parentaccountid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="parentaccountid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5c19736c-1c41-8877-f029-c98c133ce2c3}">
+                        <labels>
+                          <label description="Existing Contact" languagecode="1033" />
+                        </labels>
+                        <control id="parentcontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="parentcontactid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2baeee85-758b-58b5-9c1c-9e5611637cf7}">
+                        <labels>
+                          <label description="First Name" languagecode="1033" />
+                        </labels>
+                        <control id="firstname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="firstname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0b8fc8f7-7465-0af6-2e03-a0cc460e54af}">
+                        <labels>
+                          <label description="Last Name" languagecode="1033" />
+                        </labels>
+                        <control id="lastname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="lastname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9c0b7cef-6529-f674-75e0-821f6cde8a42}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="emailaddress1" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ebb90142-30ae-f4dd-fd2a-998b7b62a2bd}">
+                        <labels>
+                          <label description="Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="telephone1" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fe74b7ec-53b0-106f-5733-8a68c54ac61b}">
+                        <labels>
+                          <label description="Lead Source" languagecode="1033" />
+                        </labels>
+                        <control id="leadsourcecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="leadsourcecode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ed350a0d-778a-ec35-9228-4d055e072c98}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="groupbooking" showlabel="true" showbar="false" IsUserDefined="0" id="{c58dc3ec-1f4f-e209-2831-cf06d9a16507}">
+                  <labels>
+                    <label description="Group booking" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fac9d2f6-5149-6a5e-0219-6d3882d7074e}">
+                        <labels>
+                          <label description="Facility of Interest" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{05fe2554-7013-a5e8-3a52-6f8958bb14a6}">
+                        <labels>
+                          <label description="Group Size" languagecode="1033" />
+                        </labels>
+                        <control id="ye_groupsize" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_groupsize" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0763116c-bc82-3988-fdce-922215430ca9}">
+                        <labels>
+                          <label description="Sessions Requested" languagecode="1033" />
+                        </labels>
+                        <control id="ye_sessions" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_sessions" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{32236ec2-5107-f080-7a4c-143a6d1d4064}">
+                        <labels>
+                          <label description="Preferred Start" languagecode="1033" />
+                        </labels>
+                        <control id="ye_preferredstart" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_preferredstart" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5463675d-c45e-3ad6-67cd-5cd4244a1371}">
+                        <labels>
+                          <label description="Message" languagecode="1033" />
+                        </labels>
+                        <control id="description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="YE Group Enquiry" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Group/corporate enquiry for the YE Corporate Booking Process." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

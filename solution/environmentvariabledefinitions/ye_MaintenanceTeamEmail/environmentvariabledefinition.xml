@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="ye_MaintenanceTeamEmail">
+  <defaultvalue>youssef20191700778@cis.asu.edu.eg</defaultvalue>
+  <description default="Where escalated maintenance cases are reported (a shared mailbox or distribution list). Set a value per environment.">
+    <label description="Where escalated maintenance cases are reported (a shared mailbox or distribution list). Set a value per environment." languagecode="1033" />
+  </description>
+  <displayname default="Maintenance Team Email">
+    <label description="Maintenance Team Email" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

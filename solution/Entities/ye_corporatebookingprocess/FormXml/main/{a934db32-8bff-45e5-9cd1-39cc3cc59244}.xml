@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a934db32-8bff-45e5-9cd1-39cc3cc59244}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{f1135a61-c849-7d33-b69d-4f6be56692af}" name="StageStep2" locklevel="0" expanded="true" visible="false" labelid="{fe866a98-283a-4a85-be29-a791d0639890}">
+          <labels>
+            <label description="Qualify" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{6095abfe-a408-ad27-29ae-d1010ac5bf56}" name="StageStep2_section1" labelid="{d8bc3e61-1db3-417f-bd21-0d51b4ad104d}">
+                  <labels>
+                    <label description="Qualify" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{122e9f65-ac00-ca3b-8af0-c0a590a0229f}" showlabel="true" visible="true" labelid="{86cedab3-02d4-4637-8abd-d8fe3597b7a2}">
+                        <labels>
+                          <label description="Company (Account)" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:parentaccountid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="parentaccountid" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4b246364-2fc0-1433-9948-75e00e548a29}" showlabel="true" visible="true" labelid="{58fbf284-6bb0-442d-95c0-c793b82a83d7}">
+                        <labels>
+                          <label description="Existing Contact?" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:parentcontactid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="parentcontactid" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c17bd87d-51bd-bd3a-a735-7cc4c31dccab}" showlabel="true" visible="true" labelid="{2e0f5780-2fd0-449e-afc0-b7d4bfe67ddf}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:emailaddress1" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="emailaddress1" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{137198cb-e8bf-253e-b4d1-e18ae63fb0eb}" showlabel="true" visible="true" labelid="{861fafef-6b27-45f0-a251-bedd9ba5b0d8}">
+                        <labels>
+                          <label description="Facility of Interest" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:ye_facility" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ye_facility" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{07c33d60-61bf-5631-a90c-a6cc0f0e275b}" showlabel="true" visible="true" labelid="{5b58d5eb-a145-4818-85d9-a0cc88e91dd1}">
+                        <labels>
+                          <label description="Group Size" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:ye_groupsize" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="ye_groupsize" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a6421273-c9d8-b437-b7ae-58992d11fb9b}" showlabel="true" visible="true" labelid="{298ea08a-55bd-408f-93ae-2d0a94e0e3a0}">
+                        <labels>
+                          <label description="Sessions Requested" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:ye_sessions" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="ye_sessions" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{117285f8-0664-6b39-8e8f-09426ba3e1cd}" showlabel="true" visible="true" labelid="{27b2aee1-06d0-48a2-98be-0008fc8c98c0}">
+                        <labels>
+                          <label description="Preferred Start" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_lead_ye_corporatebookingprocess:ye_preferredstart" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="ye_preferredstart" disabled="false" relationship="bpf_lead_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{d80ec9bc-d1fb-ed37-ac12-ed8c377c76f3}" name="StageStep18" locklevel="0" expanded="true" visible="false" labelid="{347a7d0e-55bc-4842-add9-aaa00504ed34}">
+          <labels>
+            <label description="Develop" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{8316f3c3-7b23-4534-2e7a-8a763f629481}" name="StageStep18_section1" labelid="{b4646d3e-b324-4ce0-971b-2134681cd9f6}">
+                  <labels>
+                    <label description="Develop" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e2057cd3-3bdb-a433-90e9-e1226c0a78a4}" showlabel="true" visible="true" labelid="{45c4353e-41c5-4480-9634-fb248918488c}">
+                        <labels>
+                          <label description="Account" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:parentaccountid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="parentaccountid" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8e4911a4-f367-7c31-a8b1-c1a79387aa21}" showlabel="true" visible="true" labelid="{4c7f11d9-cc01-4cad-a6da-db347a0d0238}">
+                        <labels>
+                          <label description="Contact" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:parentcontactid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="parentcontactid" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{36256f45-1c72-1e38-a19e-1ade677da203}" showlabel="true" visible="true" labelid="{84220874-5c40-4d95-986a-efd64be3bdb9}">
+                        <labels>
+                          <label description="Facility" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:ye_facility" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ye_facility" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ac4eb897-e4eb-1e38-b8ff-b7a64d8a61b4}" showlabel="true" visible="true" labelid="{24690743-effe-41ae-8bce-d511ea2bc259}">
+                        <labels>
+                          <label description="Sessions Requested" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:ye_sessions" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="ye_sessions" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3d681652-a0e6-0e3e-b9cd-976e04d009fa}" showlabel="true" visible="true" labelid="{96a6bf6c-6981-4e7a-9468-56d65eff50eb}">
+                        <labels>
+                          <label description="First Session (date &amp; time)" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:ye_firstsession" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="ye_firstsession" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd88d868-1073-a334-a0ca-3c278e1996b5}" showlabel="true" visible="true" labelid="{162a0320-e720-4ec8-981f-39d38a4c8ab5}">
+                        <labels>
+                          <label description="Hours per Session" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:ye_sessionhours" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ye_sessionhours" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2f980504-b837-733f-8d8c-c3857e46f23a}" showlabel="true" visible="true" labelid="{f8e7dc31-2f3d-490a-a5a1-d0660e003acd}">
+                        <labels>
+                          <label description="Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:ye_frequency" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ye_frequency" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6975b644-fbde-833a-8938-40ef1e9c4bda}" showlabel="true" visible="true" labelid="{b401898d-df99-49e4-9f66-8432665f2c7f}">
+                        <labels>
+                          <label description="Budget" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:budgetamount" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="budgetamount" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{70778c95-cca1-7b32-9f75-b176a2c21370}" name="StageStep35" locklevel="0" expanded="true" visible="false" labelid="{c4b6253d-f98f-4055-9f7c-1dfc8bd94e1a}">
+          <labels>
+            <label description="Propose" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{49b21c23-1923-1276-5869-096bc8d56dd6}" name="StageStep35_section1" labelid="{e6d23fbd-65ee-4e3a-bdaf-f2ceb74356ae}">
+                  <labels>
+                    <label description="Propose" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{30b411e4-4be1-0a31-99ac-7f245bcaeef3}" showlabel="true" visible="true" labelid="{8bd025d8-0508-4052-ba33-63477c89bfe7}">
+                        <labels>
+                          <label description="List Price (sessions × hours × rate)" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:ye_listprice" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="ye_listprice" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a7b7bb34-2082-ac34-9cf3-acb20b74030b}" showlabel="true" visible="true" labelid="{16223967-1e00-4be6-a48d-9f39b04a66fc}">
+                        <labels>
+                          <label description="Proposal Value" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:estimatedvalue" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="estimatedvalue" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c1f30fd3-0a5d-e133-aa2d-555b8135ba2f}" showlabel="true" visible="true" labelid="{877a53b7-2983-40d2-a37d-5a015ae13ffd}">
+                        <labels>
+                          <label description="Proposal Presented" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:presentproposal" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="presentproposal" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5d8866f3-af89-6e35-b1d1-490c9c6f4108}" showlabel="true" visible="true" labelid="{1fe8271c-03f0-4801-a00b-4a1ab70a1177}">
+                        <labels>
+                          <label description="Est. Close Date" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:estimatedclosedate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="estimatedclosedate" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{51e6b4ce-54f6-823c-a30d-59df4d147013}" name="StageStep44" locklevel="0" expanded="true" visible="false" labelid="{d28f120c-fe2c-40ea-bf90-ec8b5ac9ae3d}">
+          <labels>
+            <label description="Close" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{41134612-be04-7f11-4afb-bfb6e1aa32e0}" name="StageStep44_section1" labelid="{6821bc0d-402e-4fc4-b8c2-f92925427d57}">
+                  <labels>
+                    <label description="Close" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5c187eda-f479-eb31-80e8-29475f308b62}" showlabel="true" visible="true" labelid="{e6ea1408-a663-458c-8299-8d82412eed03}">
+                        <labels>
+                          <label description="Final Proposal Agreed" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:completefinalproposal" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="completefinalproposal" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e1959d8-9d95-d330-b023-c9c412f52024}" showlabel="true" visible="true" labelid="{a10cc301-4679-4b74-a781-ec059727808c}">
+                        <labels>
+                          <label description="Final Decision Date" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_opportunity_ye_corporatebookingprocess:finaldecisiondate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="finaldecisiondate" disabled="false" relationship="bpf_opportunity_ye_corporatebookingprocess" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

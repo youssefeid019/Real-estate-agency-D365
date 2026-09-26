@@ -1,0 +1,118 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedoffice365_notifications"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_portal_report_is_created": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "incident",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "caseorigincode eq 3"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Get_case": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords"
+            },
+            "parameters": {
+              "entityName": "incidents",
+              "$select": "ticketnumber,title",
+              "$expand": "customerid_contact($select=emailaddress1,firstname),ye_facility($select=ye_name)",
+              "$filter": "incidentid eq @{triggerOutputs()?['body/incidentid']}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "If_the_reporter_has_an_email": {
+          "type": "If",
+          "runAfter": {
+            "Get_case": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "not": {
+              "equals": [
+                "@empty(coalesce(first(outputs('Get_case')?['body/value'])?['customerid_contact']?['emailaddress1'], ''))",
+                true
+              ]
+            }
+          },
+          "actions": {
+            "Send_email": {
+              "type": "OpenApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2"
+                },
+                "parameters": {
+                  "emailMessage/To": "@{coalesce(first(outputs('Get_case')?['body/value'])?['customerid_contact']?['emailaddress1'], '')}",
+                  "emailMessage/Subject": "We've received your report @{first(outputs('Get_case')?['body/value'])?['ticketnumber']}",
+                  "emailMessage/Body": "<p>Hi @{first(outputs('Get_case')?['body/value'])?['customerid_contact']?['firstname']},</p><p>Thanks for reporting <b>@{first(outputs('Get_case')?['body/value'])?['title']}</b> at @{first(outputs('Get_case')?['body/value'])?['ye_facility']?['ye_name']}. Your case number is <b>@{first(outputs('Get_case')?['body/value'])?['ticketnumber']}</b>. You can follow it on our portal with this email.</p><p>YE Sports Facilities</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

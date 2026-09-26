@@ -1,0 +1,88 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Every_hour": {
+          "type": "Recurrence",
+          "recurrence": {
+            "frequency": "Hour",
+            "interval": 1
+          }
+        }
+      },
+      "actions": {
+        "List_overdue_cases": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords"
+            },
+            "parameters": {
+              "entityName": "incidents",
+              "$select": "incidentid",
+              "$filter": "statecode eq 0 and _ye_facility_value ne null and isescalated ne true and ((prioritycode eq 1 and createdon lt @{addHours(utcNow(), -4)}) or (prioritycode eq 2 and createdon lt @{addHours(utcNow(), -24)}) or (prioritycode eq 3 and createdon lt @{addHours(utcNow(), -72)}))",
+              "$top": 250
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Escalate_each": {
+          "type": "Foreach",
+          "foreach": "@outputs('List_overdue_cases')?['body/value']",
+          "runAfter": {
+            "List_overdue_cases": [
+              "Succeeded"
+            ]
+          },
+          "actions": {
+            "Mark_escalated": {
+              "type": "OpenApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord"
+                },
+                "parameters": {
+                  "entityName": "incidents",
+                  "recordId": "@items('Escalate_each')?['incidentid']",
+                  "item/isescalated": true
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

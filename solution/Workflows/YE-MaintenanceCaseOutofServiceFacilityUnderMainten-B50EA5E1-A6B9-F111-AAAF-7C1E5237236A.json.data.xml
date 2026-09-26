@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{b50ea5e1-a6b9-f111-aaaf-7c1e5237236a}" Name="YE - Maintenance Case Out of Service: Facility Under Maintenance" Description="Maintenance: when triage flags a Case as taking its Facility out of service, marks the Facility Under Maintenance (blocking new bookings)." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/YE-MaintenanceCaseOutofServiceFacilityUnderMainten-B50EA5E1-A6B9-F111-AAAF-7C1E5237236A.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="YE - Maintenance Case Out of Service: Facility Under Maintenance" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Maintenance: when triage flags a Case as taking its Facility out of service, marks the Facility Under Maintenance (blocking new bookings)." />
+  </Descriptions>
+</Workflow>

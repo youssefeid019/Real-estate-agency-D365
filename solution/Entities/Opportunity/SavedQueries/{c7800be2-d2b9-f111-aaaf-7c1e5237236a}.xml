@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{c7800be2-d2b9-f111-aaaf-7c1e5237236a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" icon="1" preview="1">
+        <row name="result" id="opportunityid">
+          <cell name="name" width="200" />
+          <cell name="parentaccountid" width="170" />
+          <cell name="ye_facility" width="160" />
+          <cell name="estimatedvalue" width="110" />
+          <cell name="statuscode" width="110" />
+          <cell name="actualclosedate" width="110" />
+          <cell name="ownerid" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="opportunity">
+          <attribute name="name" />
+          <attribute name="parentaccountid" />
+          <attribute name="ye_facility" />
+          <attribute name="estimatedvalue" />
+          <attribute name="statuscode" />
+          <attribute name="actualclosedate" />
+          <attribute name="ownerid" />
+          <attribute name="opportunityid" />
+          <order attribute="actualclosedate" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="2" />
+            <condition attribute="ye_facility" operator="not-null" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Lost Block Bookings" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Lost block-booking deals (each gets a follow-up task in 90 days)." languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

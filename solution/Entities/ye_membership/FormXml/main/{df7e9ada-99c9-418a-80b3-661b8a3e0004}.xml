@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{df7e9ada-99c9-418a-80b3-661b8a3e0004}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" id="{f73cd10f-e1d7-8acc-8833-82486a8c5ebf}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="membership" showlabel="true" showbar="false" IsUserDefined="0" id="{90e847ab-3317-002b-f109-887725eecb48}">
+                  <labels>
+                    <label description="Membership" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{159b5cd0-8859-319e-b869-8f98b87d7035}">
+                        <labels>
+                          <label description="Member" languagecode="1033" />
+                        </labels>
+                        <control id="ye_member" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_member" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d5f1a995-323e-6e19-cba0-054e8351b187}">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="ye_status" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_status" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3a8f2f9b-5181-0fe7-aee5-7165d56446ae}">
+                        <labels>
+                          <label description="Discount %" languagecode="1033" />
+                        </labels>
+                        <control id="ye_discountpercentage" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="ye_discountpercentage" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f32fadf8-6cd7-57eb-a758-99ee4203712f}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ye_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ye_name" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="validity" showlabel="true" showbar="false" IsUserDefined="0" id="{79a5b148-4a91-9a87-96c6-06e452f8ad86}">
+                  <labels>
+                    <label description="Validity" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{99743b7b-6700-27da-0bcf-76375e39be98}">
+                        <labels>
+                          <label description="Start Date" languagecode="1033" />
+                        </labels>
+                        <control id="ye_startdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_startdate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f68f3f55-3588-8370-534c-05306604570c}">
+                        <labels>
+                          <label description="End Date" languagecode="1033" />
+                        </labels>
+                        <control id="ye_enddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_enddate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3b541cec-f43a-3ae1-e363-132e93720dde}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

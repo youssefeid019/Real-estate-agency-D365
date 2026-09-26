@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{f10409e6-2ec3-4731-ba1b-5eb1748c0830}" Name="Booking: Cancellation reason when cancelled" Description="Shows the Cancellation Reason and makes it required only when Status is Cancelled; hidden and optional otherwise." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BookingCancellationreasonwhencancelled-F10409E6-2EC3-4731-BA1B-5EB1748C0830.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>2</Category>
+  <Mode>1</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>2</ProcessTriggerScope>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>ye_booking</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Booking: Cancellation reason when cancelled" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Shows the Cancellation Reason and makes it required only when Status is Cancelled; hidden and optional otherwise." />
+  </Descriptions>
+</Workflow>

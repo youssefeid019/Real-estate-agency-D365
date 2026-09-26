@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoutingRule RoutingRuleId="0d8126bf-35b9-f111-aaaf-7ced8d2c3b00" Name="YE - Case Routing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <RoutingRuleId>{0d8126bf-35b9-f111-aaaf-7ced8d2c3b00}</RoutingRuleId>
+  <Name>YE - Case Routing</Name>
+  <Description>Routes cases raised against a facility to the Facility Maintenance queue.</Description>
+  <RoutingRuleItems>
+    <RoutingRuleItem RoutingRuleItemId="c8489cfe-c3b9-f111-aaaf-7c1e5237236a" Name="Facility maintenance">
+      <Name>Facility maintenance</Name>
+      <Description>Any case with a Facility is a maintenance request.</Description>
+      <RoutingRuleId>{0d8126bf-35b9-f111-aaaf-7ced8d2c3b00}</RoutingRuleId>
+      <ConditionXml>&lt;and&gt;  &lt;condition&gt;    &lt;column id="colEntity" value="incident" /&gt;    &lt;column id="colAttribute" value="ye_facility" /&gt;    &lt;column id="colOperator" value="not-null" /&gt;  &lt;/condition&gt;&lt;/and&gt;</ConditionXml>
+    </RoutingRuleItem>
+  </RoutingRuleItems>
+</RoutingRule>

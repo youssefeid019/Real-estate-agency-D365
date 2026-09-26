@@ -1,0 +1,119 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_case_is_logged_against_a_facility": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "incident",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "ye_facility",
+              "subscriptionRequest/filterexpression": "_ye_facility_value ne null and statecode eq 0"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "If_facility_added_to_an_existing_case": {
+          "type": "If",
+          "runAfter": {},
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/SdkMessage']",
+              "Update"
+            ]
+          },
+          "actions": {
+            "Route_case_with_routing_rules": {
+              "type": "OpenApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "PerformUnboundAction"
+                },
+                "parameters": {
+                  "actionName": "ApplyRoutingRule",
+                  "item/Target": {
+                    "@@odata.type": "Microsoft.Dynamics.CRM.incident",
+                    "incidentid": "@{triggerOutputs()?['body/incidentid']}"
+                  }
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        },
+        "If_reported_through_the_portal": {
+          "type": "If",
+          "runAfter": {},
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/_ownerid_value']",
+              "67a4841c-3bb9-f111-aaaf-7ced8d49c94e"
+            ]
+          },
+          "actions": {
+            "Assign_to_Facility_Maintenance_Team": {
+              "type": "OpenApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord"
+                },
+                "parameters": {
+                  "entityName": "incidents",
+                  "recordId": "@triggerOutputs()?['body/incidentid']",
+                  "item/ownerid@odata.bind": "/teams(3e0b8962-a8b9-f111-aaaf-7ced8d49c94e)"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

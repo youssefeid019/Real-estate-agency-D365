@@ -1,0 +1,87 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedoffice365_notifications"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "Maintenance Team Email (ye_MaintenanceTeamEmail)": {
+          "defaultValue": "youssef20191700778@cis.asu.edu.eg",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ye_MaintenanceTeamEmail"
+          }
+        }
+      },
+      "triggers": {
+        "When_a_case_is_escalated": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "incident",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "isescalated eq true and statecode eq 0",
+              "subscriptionRequest/filteringattributes": "isescalated"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Send_email": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "parameters": {
+              "emailMessage/To": "@{parameters('Maintenance Team Email (ye_MaintenanceTeamEmail)')}",
+              "emailMessage/Subject": "Escalated: @{triggerOutputs()?['body/ticketnumber']} @{triggerOutputs()?['body/title']}",
+              "emailMessage/Body": "<p>The maintenance case <b>@{triggerOutputs()?['body/ticketnumber']}: @{triggerOutputs()?['body/title']}</b> has passed its time limit for its priority and is escalated.</p><p>Open it in YE Sports Facility → Maintenance → Maintenance Cases (view <i>Escalated Maintenance Cases</i>).</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

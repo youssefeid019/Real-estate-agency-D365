@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{11cb0052-d1b9-f111-aaaf-7ced8d49c94e}" Name="YE - Block Booking Lost: Follow-up Task" Description="Sales cycle: a lost block-booking deal gets a follow-up task for its owner in 90 days (next season)." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/YE-BlockBookingLostFollow-upTask-11CB0052-D1B9-F111-AAAF-7CED8D49C94E.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="YE - Block Booking Lost: Follow-up Task" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Sales cycle: a lost block-booking deal gets a follow-up task for its owner in 90 days (next season)." />
+  </Descriptions>
+</Workflow>

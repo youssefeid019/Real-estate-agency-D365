@@ -1,0 +1,153 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedoffice365_notifications"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_booking_is_rescheduled_or_cancelled": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "ye_booking",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "ye_status eq 100000001 or ye_status eq 100000002",
+              "subscriptionRequest/filteringattributes": "ye_starttime,ye_endtime,ye_status"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Get_booking": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords"
+            },
+            "parameters": {
+              "entityName": "ye_bookings",
+              "$select": "ye_bookingreference,ye_starttime,ye_endtime,ye_totalprice,ye_status",
+              "$expand": "ye_facility($select=ye_name),ye_customer_contact($select=emailaddress1,firstname),ye_customer_account($select=emailaddress1,name),ye_maintenancecase($select=ticketnumber,ye_expectedreturn)",
+              "$filter": "ye_bookingid eq @{triggerOutputs()?['body/ye_bookingid']}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "If_the_member_has_an_email": {
+          "type": "If",
+          "runAfter": {
+            "Get_booking": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "not": {
+              "equals": [
+                "@empty(coalesce(first(outputs('Get_booking')?['body/value'])?['ye_customer_contact']?['emailaddress1'], first(outputs('Get_booking')?['body/value'])?['ye_customer_account']?['emailaddress1'], ''))",
+                true
+              ]
+            }
+          },
+          "actions": {
+            "Cancelled_or_updated": {
+              "type": "If",
+              "runAfter": {},
+              "expression": {
+                "equals": [
+                  "@triggerOutputs()?['body/ye_status']",
+                  100000002
+                ]
+              },
+              "actions": {
+                "Send_cancellation": {
+                  "type": "OpenApiConnection",
+                  "runAfter": {},
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                      "connectionName": "shared_office365",
+                      "operationId": "SendEmailV2"
+                    },
+                    "parameters": {
+                      "emailMessage/To": "@{coalesce(first(outputs('Get_booking')?['body/value'])?['ye_customer_contact']?['emailaddress1'], first(outputs('Get_booking')?['body/value'])?['ye_customer_account']?['emailaddress1'], '')}",
+                      "emailMessage/Subject": "Your booking @{first(outputs('Get_booking')?['body/value'])?['ye_bookingreference']} is cancelled",
+                      "emailMessage/Body": "<p>Hi @{coalesce(first(outputs('Get_booking')?['body/value'])?['ye_customer_contact']?['firstname'], first(outputs('Get_booking')?['body/value'])?['ye_customer_account']?['name'], 'there')},</p><p>Your booking has been cancelled. If you'd already paid, we'll refund you.</p><p><b>Booking reference:</b> @{first(outputs('Get_booking')?['body/value'])?['ye_bookingreference']}<br/><b>Facility:</b> @{first(outputs('Get_booking')?['body/value'])?['ye_facility']?['ye_name']}<br/><b>When:</b> @{formatDateTime(convertFromUtc(first(outputs('Get_booking')?['body/value'])?['ye_starttime'], 'Egypt Standard Time'), 'dddd d MMMM yyyy, HH:mm')} to @{formatDateTime(convertFromUtc(first(outputs('Get_booking')?['body/value'])?['ye_endtime'], 'Egypt Standard Time'), 'HH:mm')}<br/><b>Price:</b> @{formatNumber(first(outputs('Get_booking')?['body/value'])?['ye_totalprice'], 'N2')} (pay at reception)</p><p>YE Sports Facilities</p>",
+                      "emailMessage/Importance": "Normal"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "else": {
+                "actions": {
+                  "Send_update": {
+                    "type": "OpenApiConnection",
+                    "runAfter": {},
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                        "connectionName": "shared_office365",
+                        "operationId": "SendEmailV2"
+                      },
+                      "parameters": {
+                        "emailMessage/To": "@{coalesce(first(outputs('Get_booking')?['body/value'])?['ye_customer_contact']?['emailaddress1'], first(outputs('Get_booking')?['body/value'])?['ye_customer_account']?['emailaddress1'], '')}",
+                        "emailMessage/Subject": "Your booking @{first(outputs('Get_booking')?['body/value'])?['ye_bookingreference']} has been updated",
+                        "emailMessage/Body": "<p>Hi @{coalesce(first(outputs('Get_booking')?['body/value'])?['ye_customer_contact']?['firstname'], first(outputs('Get_booking')?['body/value'])?['ye_customer_account']?['name'], 'there')},</p><p>Your booking has been updated. Here are the new details.</p><p><b>Booking reference:</b> @{first(outputs('Get_booking')?['body/value'])?['ye_bookingreference']}<br/><b>Facility:</b> @{first(outputs('Get_booking')?['body/value'])?['ye_facility']?['ye_name']}<br/><b>When:</b> @{formatDateTime(convertFromUtc(first(outputs('Get_booking')?['body/value'])?['ye_starttime'], 'Egypt Standard Time'), 'dddd d MMMM yyyy, HH:mm')} to @{formatDateTime(convertFromUtc(first(outputs('Get_booking')?['body/value'])?['ye_endtime'], 'Egypt Standard Time'), 'HH:mm')}<br/><b>Price:</b> @{formatNumber(first(outputs('Get_booking')?['body/value'])?['ye_totalprice'], 'N2')} (pay at reception)</p><p>YE Sports Facilities</p>",
+                        "emailMessage/Importance": "Normal"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

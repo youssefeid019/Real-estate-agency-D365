@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>ye_SportsFacility</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="incident" />
+    <AppModuleComponent type="1" schemaName="lead" />
+    <AppModuleComponent type="1" schemaName="opportunity" />
+    <AppModuleComponent type="1" schemaName="queue" />
+    <AppModuleComponent type="1" schemaName="queueitem" />
+    <AppModuleComponent type="1" schemaName="ye_booking" />
+    <AppModuleComponent type="1" schemaName="ye_corporatebookingprocess" />
+    <AppModuleComponent type="1" schemaName="ye_facility" />
+    <AppModuleComponent type="1" schemaName="ye_facilitymaintenanceprocess" />
+    <AppModuleComponent type="1" schemaName="ye_membership" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001001}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001002}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001003}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001004}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001005}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001006}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001009}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001028}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001030}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001031}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001032}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001033}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010003000}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010003001}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010003006}" />
+    <AppModuleComponent type="26" id="{261a5122-0644-4948-88bf-6b2efc656a6e}" />
+    <AppModuleComponent type="26" id="{be800be2-d2b9-f111-aaaf-7c1e5237236a}" />
+    <AppModuleComponent type="26" id="{c1800be2-d2b9-f111-aaaf-7c1e5237236a}" />
+    <AppModuleComponent type="26" id="{c4800be2-d2b9-f111-aaaf-7c1e5237236a}" />
+    <AppModuleComponent type="26" id="{c7800be2-d2b9-f111-aaaf-7c1e5237236a}" />
+    <AppModuleComponent type="26" id="{cb800be2-d2b9-f111-aaaf-7c1e5237236a}" />
+    <AppModuleComponent type="26" id="{3f9e21b1-adb9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="26" id="{439e21b1-adb9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="26" id="{469e21b1-adb9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="26" id="{4a9e21b1-adb9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="26" id="{4f9e21b1-adb9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="26" id="{539e21b1-adb9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="26" id="{264791c6-b3b9-f111-aaaf-7ced8d49c94e}" />
+    <AppModuleComponent type="26" id="{6740c06e-fbd8-4530-baf3-8c334c9cbf03}" />
+    <AppModuleComponent type="26" id="{46d9a446-840f-4d0e-bf6b-8e6049bb1b98}" />
+    <AppModuleComponent type="26" id="{637064e0-22f2-4f10-a196-d7044bdabcc9}" />
+    <AppModuleComponent type="26" id="{fcfd79ef-4306-457a-995b-f5bbe0b8790e}" />
+    <AppModuleComponent type="26" id="{67d5f0ba-0ac6-46bb-97cb-ff38625d8b06}" />
+    <AppModuleComponent type="29" id="{e0406df1-a5b9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="29" id="{85ea583d-a6b9-f111-aaaf-7ced8d2c3b00}" />
+    <AppModuleComponent type="60" id="{43efee5c-9ba2-4a43-a53e-3bd4202cdace}" />
+    <AppModuleComponent type="60" id="{d753258b-cb0f-4ed8-8d58-4451fc0ffd60}" />
+    <AppModuleComponent type="60" id="{df7e9ada-99c9-418a-80b3-661b8a3e0004}" />
+    <AppModuleComponent type="60" id="{3e5e3c74-7fc5-4655-a217-7778be7f2796}" />
+    <AppModuleComponent type="60" id="{b9487c94-cdb9-f111-aaaf-7ced8d49c94e}" />
+    <AppModuleComponent type="60" id="{e4487c94-cdb9-f111-aaaf-7ced8d49c94e}" />
+    <AppModuleComponent type="60" id="{11497c94-cdb9-f111-aaaf-7ced8d49c94e}" />
+    <AppModuleComponent type="60" id="{43497c94-cdb9-f111-aaaf-7ced8d49c94e}" />
+    <AppModuleComponent type="60" id="{b4497c94-cdb9-f111-aaaf-7ced8d49c94e}" />
+    <AppModuleComponent type="62" schemaName="ye_sportsfacility" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{a4be89ff-7c35-4d69-9900-999c3f603e6f}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+    <Role id="{61489f81-37b9-f111-aaaf-7c1e5237236a}" />
+    <Role id="{98eab887-37b9-f111-aaaf-7c1e5237236a}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="YE Sports Facility" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Sports facility bookings: facilities, bookings, members and memberships, sales hand-off and facility maintenance cases." languagecode="1033" />
+  </Descriptions>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

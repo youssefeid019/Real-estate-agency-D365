@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{61489f81-37b9-f111-aaaf-7c1e5237236a}" name="YE Coordinator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <IsAutoAssigned>0</IsAutoAssigned>
+  <Description>Location coordinator: manages Bookings at their own location (business unit), raises and works maintenance Cases (reads all, changes their location's/team's) through the YE Facility Maintenance Process, reads Facilities, Members and Memberships. Cannot delete Facilities. Assign alongside Basic User.</Description>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendContact" level="Global" />
+    <RolePrivilege name="prvAppendIncident" level="Local" />
+    <RolePrivilege name="prvAppendQueue" level="Global" />
+    <RolePrivilege name="prvAppendToAccount" level="Global" />
+    <RolePrivilege name="prvAppendToContact" level="Global" />
+    <RolePrivilege name="prvAppendToIncident" level="Local" />
+    <RolePrivilege name="prvAppendToOpportunity" level="Global" />
+    <RolePrivilege name="prvAppendToQueue" level="Global" />
+    <RolePrivilege name="prvAppendToye_booking" level="Local" />
+    <RolePrivilege name="prvAppendToye_facility" level="Global" />
+    <RolePrivilege name="prvAppendToye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvAppendToye_membership" level="Global" />
+    <RolePrivilege name="prvAppendye_booking" level="Local" />
+    <RolePrivilege name="prvAppendye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvAssignye_booking" level="Local" />
+    <RolePrivilege name="prvCreateContact" level="Global" />
+    <RolePrivilege name="prvCreateIncident" level="Local" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvCreateye_booking" level="Local" />
+    <RolePrivilege name="prvCreateye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvReadAccount" level="Global" />
+    <RolePrivilege name="prvReadContact" level="Global" />
+    <RolePrivilege name="prvReadIncident" level="Global" />
+    <RolePrivilege name="prvReadOpportunity" level="Global" />
+    <RolePrivilege name="prvReadQueue" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvReadye_booking" level="Local" />
+    <RolePrivilege name="prvReadye_facility" level="Global" />
+    <RolePrivilege name="prvReadye_facilitymaintenanceprocess" level="Global" />
+    <RolePrivilege name="prvReadye_membership" level="Global" />
+    <RolePrivilege name="prvShareye_booking" level="Local" />
+    <RolePrivilege name="prvWriteContact" level="Global" />
+    <RolePrivilege name="prvWriteIncident" level="Local" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+    <RolePrivilege name="prvWriteye_booking" level="Local" />
+    <RolePrivilege name="prvWriteye_facilitymaintenanceprocess" level="Global" />
+  </RolePrivileges>
+</Role>

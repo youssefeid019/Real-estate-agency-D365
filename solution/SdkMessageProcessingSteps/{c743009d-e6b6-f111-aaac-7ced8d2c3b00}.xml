@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="YE: BookingPricing - Update of ye_booking" SdkMessageProcessingStepId="{c743009d-e6b6-f111-aaac-7ced8d2c3b00}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>YE.Plugins.BookingPricingPlugin, YE.Plugins, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e0422a37983ff3d5</PluginTypeName>
+  <PluginTypeId>bb43009d-e6b6-f111-aaac-7ced8d2c3b00</PluginTypeId>
+  <PrimaryEntity>ye_booking</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>ye_facility,ye_customer,ye_starttime,ye_endtime,ye_status</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>2</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{2e4b7b04-d2b9-f111-aaaf-7ced8d49c94e}</SdkMessageProcessingStepImageId>
+      <Attributes>ye_facility,ye_customer,ye_starttime,ye_endtime,ye_status,ye_paymentstatus</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e1ec2c0c-1744-42fa-a346-fb8237357d0f}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form showImage="true" shownavigationbar="true" maxWidth="1920">
+      <tabs>
+        <tab name="Summary" verticallayout="true" id="{f7109214-c3bd-4734-ad5b-4054499a43d6}" IsUserDefined="0" locklevel="0" expanded="true" showlabel="true" labelid="{aa606d6c-04a1-45e8-bc50-5c222c26de19}" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="ye_groupbooking" showlabel="true" showbar="false" IsUserDefined="0" id="{e9b01c45-1d89-88d5-b2c9-bc7d8d007dd8}" ordinalvalue="3" solutionaction="Added">
+                  <labels>
+                    <label description="Group booking" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4abc2be2-a2c2-2c74-7503-88e09275aef8}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Facility of Interest" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5d23e87f-5a36-1ba4-0063-0f974650d9b8}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Group Size" languagecode="1033" />
+                        </labels>
+                        <control id="ye_groupsize" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_groupsize" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ca522a51-27b8-c06c-6805-84734c3d52d9}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Sessions Requested" languagecode="1033" />
+                        </labels>
+                        <control id="ye_sessions" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_sessions" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{32aa29e8-09d9-6c52-e935-7b7180d86600}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Preferred Start" languagecode="1033" />
+                        </labels>
+                        <control id="ye_preferredstart" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_preferredstart" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Sales Insights" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Lead form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

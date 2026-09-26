@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityMaps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityMap>
+    <EntitySource>lead</EntitySource>
+    <EntityTarget>opportunity</EntityTarget>
+    <AttributeMaps>
+      <AttributeMap>
+        <AttributeSource>ye_facility</AttributeSource>
+        <AttributeTarget>ye_facility</AttributeTarget>
+      </AttributeMap>
+      <AttributeMap>
+        <AttributeSource>ye_groupsize</AttributeSource>
+        <AttributeTarget>ye_groupsize</AttributeTarget>
+      </AttributeMap>
+      <AttributeMap>
+        <AttributeSource>ye_preferredstart</AttributeSource>
+        <AttributeTarget>ye_preferredstart</AttributeTarget>
+      </AttributeMap>
+      <AttributeMap>
+        <AttributeSource>ye_sessions</AttributeSource>
+        <AttributeTarget>ye_sessions</AttributeTarget>
+      </AttributeMap>
+    </AttributeMaps>
+  </EntityMap>
+</EntityMaps>

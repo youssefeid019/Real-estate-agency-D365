@@ -1,0 +1,99 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ye_sharedcommondataserviceforapps_booking"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_case_closes_a_facility": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "incident",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "statecode eq 0 and ye_takesoutofservice eq true and _ye_facility_value ne null",
+              "subscriptionRequest/filteringattributes": "ye_takesoutofservice,ye_expectedreturn,ye_facility"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "List_affected_bookings": {
+          "type": "OpenApiConnection",
+          "runAfter": {},
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords"
+            },
+            "parameters": {
+              "entityName": "ye_bookings",
+              "$select": "ye_bookingid",
+              "$filter": "_ye_facility_value eq @{triggerOutputs()?['body/_ye_facility_value']} and ye_status ne 100000002 and ye_status ne 100000003 and ye_endtime gt @{utcNow()} and _ye_maintenancecase_value ne @{triggerOutputs()?['body/incidentid']}@{if(empty(triggerOutputs()?['body/ye_expectedreturn']), '', concat(' and ye_starttime lt ', formatDateTime(triggerOutputs()?['body/ye_expectedreturn'], 'yyyy-MM-dd'), 'T00:00:00Z'))}",
+              "$top": 500
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Flag_each": {
+          "type": "Foreach",
+          "foreach": "@outputs('List_affected_bookings')?['body/value']",
+          "runAfter": {
+            "List_affected_bookings": [
+              "Succeeded"
+            ]
+          },
+          "actions": {
+            "Link_to_case": {
+              "type": "OpenApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord"
+                },
+                "parameters": {
+                  "entityName": "ye_bookings",
+                  "recordId": "@items('Flag_each')?['ye_bookingid']",
+                  "item/ye_maintenancecase@odata.bind": "/incidents(@{triggerOutputs()?['body/incidentid']})"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{bb3ffbc7-899c-4c63-b8ba-b2a32b7bb621}" Name="Booking: End time must be after start time" Description="Blocks saving a booking whose end time is not after its start time." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BookingEndtimemustbeafterstarttime-BB3FFBC7-899C-4C63-B8BA-B2A32B7BB621.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>2</Category>
+  <Mode>1</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>2</ProcessTriggerScope>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>ye_booking</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Booking: End time must be after start time" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Blocks saving a booking whose end time is not after its start time." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{62e5ae39-78fa-4493-9a38-21ec183f4ca9}">
+      <label languagecode="1033" description="End time must be after the start time." />
+    </steplabels>
+  </labels>
+</Workflow>

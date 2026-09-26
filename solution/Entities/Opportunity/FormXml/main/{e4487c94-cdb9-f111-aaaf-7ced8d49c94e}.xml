@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e4487c94-cdb9-f111-aaaf-7ced8d49c94e}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" id="{5d735143-d8f4-11fc-4ab6-3821b948f8cc}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Deal" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="deal" showlabel="true" showbar="false" IsUserDefined="0" id="{2c23bc69-fa98-a56c-f5de-c88925503ded}">
+                  <labels>
+                    <label description="Deal" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{006ad454-8795-a072-2360-9155b845c154}">
+                        <labels>
+                          <label description="Topic" languagecode="1033" />
+                        </labels>
+                        <control id="name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ede07aff-e6fb-24b9-f094-3ad1a3b34002}">
+                        <labels>
+                          <label description="Account" languagecode="1033" />
+                        </labels>
+                        <control id="parentaccountid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="parentaccountid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{31345a08-a4e4-990c-178f-5197b56cf2b5}">
+                        <labels>
+                          <label description="Contact" languagecode="1033" />
+                        </labels>
+                        <control id="parentcontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="parentcontactid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{abd2fb7d-2aef-aae3-1b52-8584b620f450}">
+                        <labels>
+                          <label description="Est. Close Date" languagecode="1033" />
+                        </labels>
+                        <control id="estimatedclosedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="estimatedclosedate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eb025035-5375-9798-ac61-ac44c6d96a4c}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="blockbooking" showlabel="true" showbar="false" IsUserDefined="0" id="{211cb3e4-ae53-f049-10b4-15d26050a493}">
+                  <labels>
+                    <label description="Block booking" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2dc20b51-ce6c-39b9-275b-d9014c3621a4}">
+                        <labels>
+                          <label description="Facility" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{80dab204-d382-3bd1-4720-37cce35174fb}">
+                        <labels>
+                          <label description="Group Size" languagecode="1033" />
+                        </labels>
+                        <control id="ye_groupsize" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_groupsize" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{26feae8c-a588-dace-204e-544ca42fbc21}">
+                        <labels>
+                          <label description="Sessions Requested" languagecode="1033" />
+                        </labels>
+                        <control id="ye_sessions" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_sessions" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{debc4bb1-2093-9a66-3ccf-973cb48fe8ea}">
+                        <labels>
+                          <label description="Preferred Start" languagecode="1033" />
+                        </labels>
+                        <control id="ye_preferredstart" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_preferredstart" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{32df0f71-7a06-21c8-9ac9-98edcb731866}">
+                        <labels>
+                          <label description="Budget" languagecode="1033" />
+                        </labels>
+                        <control id="budgetamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="budgetamount" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="schedule" showlabel="true" showbar="false" IsUserDefined="0" id="{5af3a62b-9632-a522-a21c-6d7dea570aff}">
+                  <labels>
+                    <label description="Session schedule (Draft bookings are generated from this when won)" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e24ec4d0-d541-4d77-bb6c-2725b9a55a26}">
+                        <labels>
+                          <label description="First Session" languagecode="1033" />
+                        </labels>
+                        <control id="ye_firstsession" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_firstsession" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{add93d0e-84b1-2eba-b328-786d316db979}">
+                        <labels>
+                          <label description="Hours per Session" languagecode="1033" />
+                        </labels>
+                        <control id="ye_sessionhours" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="ye_sessionhours" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ff6d1b2b-fc2a-d763-b738-a60f0050f04e}">
+                        <labels>
+                          <label description="Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="ye_frequency" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_frequency" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="proposal" showlabel="true" showbar="false" IsUserDefined="0" id="{689129d3-0819-fa8a-e14e-855c08bf448c}">
+                  <labels>
+                    <label description="Proposal" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ac8e759d-40be-59d3-e667-78edf67f12b3}">
+                        <labels>
+                          <label description="List Price" languagecode="1033" />
+                        </labels>
+                        <control id="ye_listprice" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="ye_listprice" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d4da093c-40d3-54e2-b1e1-53e93641e37f}">
+                        <labels>
+                          <label description="Proposal Value" languagecode="1033" />
+                        </labels>
+                        <control id="estimatedvalue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="estimatedvalue" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4eab1fc4-6cc1-ffe2-fbb9-3daa968af381}">
+                        <labels>
+                          <label description="Proposal Presented" languagecode="1033" />
+                        </labels>
+                        <control id="presentproposal" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="presentproposal" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d92a1878-1e3c-4e6d-e182-06ac87577c7b}">
+                        <labels>
+                          <label description="Final Proposal Agreed" languagecode="1033" />
+                        </labels>
+                        <control id="completefinalproposal" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="completefinalproposal" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e9e95f4a-003d-d49b-60b0-ad4c39f28bbf}">
+                        <labels>
+                          <label description="Final Decision Date" languagecode="1033" />
+                        </labels>
+                        <control id="finaldecisiondate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="finaldecisiondate" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="bookings" id="{b8752ea3-17b4-8c2f-117a-ff7c2d5ff189}" IsUserDefined="1" verticallayout="true" expanded="true">
+          <labels>
+            <label description="Bookings" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="bookings_grid" showlabel="true" showbar="false" IsUserDefined="0" id="{2e4e2aaa-89ab-45dd-b363-99f607fca2ab}">
+                  <labels>
+                    <label description="Bookings from this deal" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{819ab9b9-e554-07a2-0692-b6915777a70f}" showlabel="true" rowspan="8" colspan="1">
+                        <labels>
+                          <label description="Bookings" languagecode="1033" />
+                        </labels>
+                        <control id="opp_bookings" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>ye_booking</TargetEntityType>
+                            <ViewId>{261a5122-0644-4948-88bf-6b2efc656a6e}</ViewId>
+                            <RelationshipName>ye_opportunity_ye_booking</RelationshipName>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="YE Block Booking" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Block-booking deal for the YE Corporate Booking Process; won deals create the Draft booking." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

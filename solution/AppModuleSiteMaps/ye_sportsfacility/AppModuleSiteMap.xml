@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>ye_sportsfacility</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="area_sportsfacility" ShowGroups="true" IntroducedVersion="7.0.0.0">
+      <Titles>
+        <Title LCID="1033" Title="Sports Facility" />
+      </Titles>
+      <Group Id="grp_home" IsProfile="false" IntroducedVersion="7.0.0.0">
+        <Titles>
+          <Title LCID="1033" Title="Home" />
+        </Titles>
+        <SubArea Id="sub_home" Url="$webresource:ye_/pages/home.html" VectorIcon="$webresource:ye_/icons/home.svg" AvailableOffline="false" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Sales &amp; bookings" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_home_cases" Url="$webresource:ye_/pages/cases.html" VectorIcon="$webresource:ye_/icons/maintenance.svg" AvailableOffline="false" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Maintenance cases" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_bookings" IsProfile="false" IntroducedVersion="7.0.0.0">
+        <Titles>
+          <Title LCID="1033" Title="Bookings" />
+        </Titles>
+        <SubArea Id="sub_ye_booking" Entity="ye_booking" VectorIcon="$webresource:ye_/icons/booking.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0"></SubArea>
+        <SubArea Id="sub_ye_facility" Entity="ye_facility" VectorIcon="$webresource:ye_/icons/facility.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0"></SubArea>
+      </Group>
+      <Group Id="grp_members" IsProfile="false" IntroducedVersion="7.0.0.0">
+        <Titles>
+          <Title LCID="1033" Title="Members" />
+        </Titles>
+        <SubArea Id="sub_contact" Entity="contact" VectorIcon="$webresource:ye_/icons/member.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Members" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_ye_membership" Entity="ye_membership" VectorIcon="$webresource:ye_/icons/membership.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0"></SubArea>
+      </Group>
+      <Group Id="grp_sales" IsProfile="false" IntroducedVersion="7.0.0.0">
+        <Titles>
+          <Title LCID="1033" Title="Sales" />
+        </Titles>
+        <SubArea Id="sub_lead" Entity="lead" VectorIcon="$webresource:ye_/icons/enquiry.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Enquiries (Leads)" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_account" Entity="account" VectorIcon="$webresource:ye_/icons/account.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Accounts (Corporate)" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_opportunity" Entity="opportunity" VectorIcon="$webresource:ye_/icons/opportunity.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Opportunities" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_maintenance" IsProfile="false" IntroducedVersion="7.0.0.0">
+        <Titles>
+          <Title LCID="1033" Title="Maintenance" />
+        </Titles>
+        <SubArea Id="sub_incident" Entity="incident" VectorIcon="$webresource:ye_/icons/maintenance.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Maintenance Cases" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_queueitem" Entity="queueitem" VectorIcon="$webresource:ye_/icons/queue.svg" AvailableOffline="true" PassParams="false" IntroducedVersion="7.0.0.0">
+          <Titles>
+            <Title LCID="1033" Title="Queue Items" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="YE Sports Facility" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

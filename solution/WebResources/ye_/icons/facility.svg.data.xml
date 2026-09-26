@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{39a255a1-adb9-f111-aaaf-7ced8d2c3b00}</WebResourceId>
+  <Name>ye_/icons/facility.svg</Name>
+  <DisplayName>Facility icon</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ye_iconsfacilitysvg39A255A1-ADB9-F111-AAAF-7CED8D2C3B00</FileName>
+</WebResource>

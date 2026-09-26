@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Created">
+  <description default="Draft bookings created with their session times.">
+    <label description="Draft bookings created with their session times." languagecode="1033" />
+  </description>
+  <displayname default="Created">
+    <label description="Created" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Created</name>
+  <type>7</type>
+</customapiresponseproperty>

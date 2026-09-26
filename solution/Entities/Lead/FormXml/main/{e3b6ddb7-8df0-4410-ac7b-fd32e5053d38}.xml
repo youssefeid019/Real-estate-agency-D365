@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e3b6ddb7-8df0-4410-ac7b-fd32e5053d38}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form showImage="true" shownavigationbar="true" maxWidth="1920">
+      <tabs>
+        <tab name="Summary" verticallayout="true" id="{f7109214-c3bd-4734-ad5b-4054499a43d6}" IsUserDefined="0" locklevel="0" expanded="true" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="SUMMARY_TAB_ADDRESSINPUT_SECTION" id="4901e6b4-add1-4504-8985-bebe34c7a93c" IsUserDefined="0" locklevel="0" visible="false" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="2">
+                  <rows>
+                    <row>
+                      <cell id="{d75860a2-3d5d-4909-a310-c8a1f2a33f4b}" showlabel="false" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="Street 1" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="ye_groupbooking" showlabel="true" showbar="false" IsUserDefined="0" id="{51c5a393-179c-b2bf-9cee-50ffb298acf8}" ordinalvalue="5" solutionaction="Added">
+                  <labels>
+                    <label description="Group booking" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{aebdfae4-de1b-935d-a740-a0448601a917}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Facility of Interest" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fc04b4ba-4dc4-544b-8044-b91069eaf90c}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Group Size" languagecode="1033" />
+                        </labels>
+                        <control id="ye_groupsize" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_groupsize" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5be3e630-f7d3-e814-2d95-c1dc00714312}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Sessions Requested" languagecode="1033" />
+                        </labels>
+                        <control id="ye_sessions" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ye_sessions" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8bc233c4-8c93-d558-f253-f0caaa4995df}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Preferred Start" languagecode="1033" />
+                        </labels>
+                        <control id="ye_preferredstart" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_preferredstart" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Lead" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Lead form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

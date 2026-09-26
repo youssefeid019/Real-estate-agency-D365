@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3e5e3c74-7fc5-4655-a217-7778be7f2796}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{8f11ee4a-6ad3-4811-88fe-9200c43970aa}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="booking" showlabel="true" showbar="false" IsUserDefined="0" id="{a1794377-93f6-d278-4768-7a9b04f203d0}">
+                  <labels>
+                    <label description="Booking" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d32dc152-3b9b-3d7e-3412-98e62f4edb6e}">
+                        <labels>
+                          <label description="Booking Reference" languagecode="1033" />
+                        </labels>
+                        <control id="ye_bookingreference" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ye_bookingreference" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b5ffbd22-667e-c35b-0062-ffe0b13e7933}">
+                        <labels>
+                          <label description="Facility" languagecode="1033" />
+                        </labels>
+                        <control id="ye_facility" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_facility" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f83caeee-b051-9c51-c249-efc2d032c014}" colspan="1" showlabel="false" rowspan="4">
+                        <labels>
+                          <label description="Facility details" languagecode="1033" />
+                        </labels>
+                        <control id="facility_quickview" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="ye_facility" disabled="false">
+                          <parameters>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="ye_facility"&gt;43efee5c-9ba2-4a43-a53e-3bd4202cdace&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                            <ControlMode>Edit</ControlMode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8dba6ca7-b0c5-e0a2-f5b5-6ac3ded3dc1f}">
+                        <labels>
+                          <label description="Member (contact or account)" languagecode="1033" />
+                        </labels>
+                        <control id="ye_customer" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_customer" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1224db2a-04e2-8d93-3997-7cbea004c55a}">
+                        <labels>
+                          <label description="Opportunity" languagecode="1033" />
+                        </labels>
+                        <control id="ye_opportunity" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_opportunity" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="schedule" showlabel="true" showbar="false" IsUserDefined="0" id="{39fe51e3-4904-3086-8fcc-21b2058ff0a8}">
+                  <labels>
+                    <label description="Schedule &amp; Price" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ad111b65-955c-89f0-6f45-722f0c7ca293}">
+                        <labels>
+                          <label description="Start Time" languagecode="1033" />
+                        </labels>
+                        <control id="ye_starttime" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_starttime" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f5d0a703-3dd8-b871-537d-8641569e5334}">
+                        <labels>
+                          <label description="End Time" languagecode="1033" />
+                        </labels>
+                        <control id="ye_endtime" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_endtime" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ec25cf57-6e9d-266a-543e-f4679299e837}">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="ye_status" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_status" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c7166cf5-5fe7-da56-7228-0c228df0e124}">
+                        <labels>
+                          <label description="Cancellation Reason" languagecode="1033" />
+                        </labels>
+                        <control id="ye_cancellationreason" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_cancellationreason" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2c82e4e2-45fd-2d8b-da1c-0d3508914809}">
+                        <labels>
+                          <label description="Total Price" languagecode="1033" />
+                        </labels>
+                        <control id="ye_totalprice" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="ye_totalprice" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{992406da-1600-fc80-6a8f-cb2216de03ed}">
+                        <labels>
+                          <label description="Payment Status" languagecode="1033" />
+                        </labels>
+                        <control id="ye_paymentstatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_paymentstatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e6d4e53d-1315-bc7a-ec2b-d3bb39a6528c}">
+                        <labels>
+                          <label description="Affected by Maintenance" languagecode="1033" />
+                        </labels>
+                        <control id="ye_maintenancecase" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ye_maintenancecase" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{931e5f75-403f-80bd-72b7-d9115c77c293}">
+                        <labels>
+                          <label description="Scheduling Note" languagecode="1033" />
+                        </labels>
+                        <control id="ye_schedulingnote" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ye_schedulingnote" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{85547360-e49e-5f18-82d8-9180bed6a266}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <formLibraries>
+        <Library name="ye_/scripts/booking_form.js" libraryUniqueId="{41b16cdc-b799-76d6-25fa-226cf8b2affd}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="YE.BookingForm.onLoad" libraryName="ye_/scripts/booking_form.js" handlerUniqueId="{d6ca971f-1c38-33fe-4b8e-2dbe6a48efa5}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="ye_facility">
+          <Handlers>
+            <Handler functionName="YE.BookingForm.onChange" libraryName="ye_/scripts/booking_form.js" handlerUniqueId="{020acfb8-3d26-3a0e-1905-bb2369f75099}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="ye_starttime">
+          <Handlers>
+            <Handler functionName="YE.BookingForm.onChange" libraryName="ye_/scripts/booking_form.js" handlerUniqueId="{876e7c85-c3dd-e1c2-e5cd-70b2c4e2bbfe}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="ye_endtime">
+          <Handlers>
+            <Handler functionName="YE.BookingForm.onChange" libraryName="ye_/scripts/booking_form.js" handlerUniqueId="{afb1b4ff-c1c5-e5e6-47f1-c2a107788911}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="ye_status">
+          <Handlers>
+            <Handler functionName="YE.BookingForm.onChange" libraryName="ye_/scripts/booking_form.js" handlerUniqueId="{8f3e5caa-bbab-ebfd-0715-c0577cfc77eb}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

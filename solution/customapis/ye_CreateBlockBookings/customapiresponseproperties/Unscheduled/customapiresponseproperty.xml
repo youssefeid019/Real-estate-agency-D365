@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Unscheduled">
+  <description default="Draft bookings created without times (slot taken, facility closed, or no schedule).">
+    <label description="Draft bookings created without times (slot taken, facility closed, or no schedule)." languagecode="1033" />
+  </description>
+  <displayname default="Unscheduled">
+    <label description="Unscheduled" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Unscheduled</name>
+  <type>7</type>
+</customapiresponseproperty>
