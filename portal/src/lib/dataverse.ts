@@ -1,4 +1,5 @@
 import { ApiError } from "./errors";
+import { reveal } from "./secret";
 
 // Microsoft public client that allows password sign-in
 const DATAVERSE_TOOLING_CLIENT_ID = "51f81489-12ee-4a9e-aaae-a2591f45987d";
@@ -17,6 +18,15 @@ function env(name: string): string | undefined {
   return value ? value : undefined;
 }
 
+// Read a setting that may be encrypted
+function secret(name: string): string | undefined {
+  try {
+    return reveal(env(name));
+  } catch (e) {
+    throw misconfigured(`${name} can't be decrypted: ${(e as Error).message}`);
+  }
+}
+
 // Read the connection settings from the environment
 function loadConfig(): Config {
   if (config) return config;
@@ -27,9 +37,9 @@ function loadConfig(): Config {
   const tenant = env("DATAVERSE_TENANT_ID") ?? "organizations";
 
   const clientId = env("DATAVERSE_CLIENT_ID");
-  const clientSecret = env("DATAVERSE_CLIENT_SECRET");
+  const clientSecret = secret("DATAVERSE_CLIENT_SECRET");
   const username = env("DATAVERSE_USERNAME");
-  const password = env("DATAVERSE_PASSWORD");
+  const password = secret("DATAVERSE_PASSWORD");
 
   const devToken = process.env.NODE_ENV !== "production" ? env("DATAVERSE_DEV_ACCESS_TOKEN") : undefined;
   if (devToken) {
