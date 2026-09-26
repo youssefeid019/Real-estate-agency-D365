@@ -4,14 +4,15 @@ Dynamics 365 solution for the community sports facilities scenario, plus a custo
 
 - CRM: https://yesportsfacilitydev.crm4.dynamics.com (model-driven app "YE Sports Facility")
 - Customer portal, live: https://ye-sports-portal.vercel.app
+- Phone app "Today's Bookings": https://apps.powerapps.com/play/e/b154a431-346f-ea58-ba4d-ed6cf315ad5c/a/aba57c0e-4c0f-4f76-b360-52fbeb857590
 
-Folders: `dist/` (unmanaged and managed exports), `solution/` (unpacked solution), `plugins/`, `webresources/`, `portal/`.
+Folders: `dist/` (unmanaged and managed exports), `solution/` (unpacked solution), `plugins/`, `webresources/`, `portal/`, `canvasapp/` (screens of the phone app).
 
 ## What I built
 
-All nine requirements. On top of them: plugin unit tests, the solution unpacked in Git, a sales process for corporate block bookings, a maintenance process with a case queue, and a portal where customers book, reschedule or cancel, send a group enquiry and report a facility problem.
+All nine requirements. On top of them: plugin unit tests, the solution unpacked in Git, a canvas app for phones showing a facility's bookings for today, a sales process for corporate block bookings, a maintenance process with a case queue, and a portal where customers book, reschedule or cancel, send a group enquiry and report a facility problem.
 
-Not done: the canvas app for today's bookings (the "Upcoming Confirmed Bookings" view covers it for now), and the email flows are built but switched off because they need an Outlook connection signed in by hand.
+Not done: the email flows are built but switched off, because they need an Outlook connection signed in by hand.
 
 ## Approach per requirement
 
@@ -36,6 +37,7 @@ Each location is a business unit (Location - North, Location - South). The Coord
 4. For the portal, create an application user with the YE Portal Integration role and note its user ID.
 5. In the Vercel project (or `portal/.env.local`) set `DATAVERSE_URL`, `DATAVERSE_TENANT_ID`, `DATAVERSE_USERNAME`, `DATAVERSE_PASSWORD`, `DATAVERSE_CALLER_ID` (the application user's ID) and `DATAVERSE_SECRET_KEY`. The password is stored encrypted: `node encrypt-secret.mjs .env.local DATAVERSE_PASSWORD` encrypts it and gives you the key.
 6. Deploy with `vercel deploy --prod`, then book a slot on the portal and check it appears in the CRM with its price.
+7. The Today's Bookings app comes with the solution and reads Dataverse directly, so it needs no connection. Share it with the staff who should use it (make.powerapps.com, Apps, Share).
 
 ## Web resources
 
