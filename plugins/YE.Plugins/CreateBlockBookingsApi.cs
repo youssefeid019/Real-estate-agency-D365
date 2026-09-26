@@ -7,10 +7,12 @@ using Microsoft.Xrm.Sdk.Query;
 
 namespace YE.Plugins
 {
-    // Custom API: creates one Draft booking per session of a won deal
+    // Custom API: creates one Confirmed booking per session of a won deal
     public class CreateBlockBookingsApi : IPlugin
     {
         private const int StatusDraft = 100000000;
+        private const int StatusConfirmed = 100000001;
+        private const int PaymentAwaiting = 100000000;
         private const int StatusCancelled = 100000002;
         private const int FacilityAvailable = 100000000;
         private const int FrequencyWeekly = 100000000;
@@ -32,7 +34,7 @@ namespace YE.Plugins
 
         public struct Result { public int Created; public int Unscheduled; }
 
-        // Plans and creates the Draft bookings for a deal
+        // Plans and creates the session bookings for a deal
         public static Result Run(IOrganizationService service, Guid opportunityId, int? timeZoneCode)
         {
             // Do nothing if the deal already has bookings
@@ -54,7 +56,7 @@ namespace YE.Plugins
             // No schedule: a single untimed Draft
             if (first == null || hours == null || hours <= 0)
             {
-                service.Create(Draft(facility, member, opportunityId, null, null, null));
+                service.Create(Unscheduled(facility, member, opportunityId, null));
                 return new Result { Unscheduled = 1 };
             }
 
@@ -70,7 +72,7 @@ namespace YE.Plugins
             var available = service.Retrieve("ye_facility", facility.Id, new ColumnSet("ye_availabilitystatus"))
                 .GetAttributeValue<OptionSetValue>("ye_availabilitystatus")?.Value == FacilityAvailable;
 
-            // One Draft per session; clashes become untimed Drafts with a note
+            // One Confirmed booking per session; clashes become untimed Drafts with a note
             var firstLocal = ToLocal(service, first.Value, timeZoneCode);
             var result = new Result();
             var planned = new List<Tuple<DateTime, DateTime>>();
@@ -87,31 +89,43 @@ namespace YE.Plugins
                 var label = $"Session {i + 1} of {sessions}: {startLocal:ddd d MMM yyyy HH:mm} for {hours.Value:0.##} h";
                 if (problem == null)
                 {
-                    service.Create(Draft(facility, member, opportunityId, start, end, label));
+                    service.Create(Confirmed(facility, member, opportunityId, start, end, label));
                     planned.Add(Tuple.Create(start, end));
                     result.Created++;
                 }
                 else
                 {
-                    service.Create(Draft(facility, member, opportunityId, null, null, $"{label}: not scheduled, {problem}. Pick another time."));
+                    service.Create(Unscheduled(facility, member, opportunityId, $"{label}: not scheduled, {problem}. Pick another time."));
                     result.Unscheduled++;
                 }
             }
             return result;
         }
 
-        // Builds a Draft booking record
-        private static Entity Draft(EntityReference facility, EntityReference member, Guid opportunityId, DateTime? start, DateTime? end, string note)
+        // A scheduled session: Confirmed with its times, awaiting payment; the plugins price it
+        private static Entity Confirmed(EntityReference facility, EntityReference member, Guid opportunityId, DateTime start, DateTime end, string note)
+        {
+            var booking = Booking(StatusConfirmed, facility, member, opportunityId, note);
+            booking["ye_starttime"] = start;
+            booking["ye_endtime"] = end;
+            booking["ye_paymentstatus"] = new OptionSetValue(PaymentAwaiting);
+            return booking;
+        }
+
+        // A session that couldn't be placed: an untimed Draft for the coordinator
+        private static Entity Unscheduled(EntityReference facility, EntityReference member, Guid opportunityId, string note) =>
+            Booking(StatusDraft, facility, member, opportunityId, note);
+
+        // Fields every session booking shares
+        private static Entity Booking(int status, EntityReference facility, EntityReference member, Guid opportunityId, string note)
         {
             var booking = new Entity("ye_booking")
             {
-                ["ye_status"] = new OptionSetValue(StatusDraft),
+                ["ye_status"] = new OptionSetValue(status),
                 ["ye_facility"] = facility,
                 ["ye_customer"] = member,
                 ["ye_opportunity"] = new EntityReference("opportunity", opportunityId),
             };
-            if (start != null) booking["ye_starttime"] = start;
-            if (end != null) booking["ye_endtime"] = end;
             if (note != null) booking["ye_schedulingnote"] = note;
             return booking;
         }

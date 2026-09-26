@@ -261,7 +261,7 @@ namespace YE.Plugins.Tests
         [InlineData(100000000, 7)]
         [InlineData(100000001, 14)]
         [InlineData(100000002, 1)]
-        public void BlockBookings_one_timed_draft_per_session(int frequency, int stepDays)
+        public void BlockBookings_one_confirmed_booking_per_session(int frequency, int stepDays)
         {
             var deal = WonDeal(3, frequency, Start);
             ctx.Initialize(new[] { facility, person, deal });
@@ -273,7 +273,11 @@ namespace YE.Plugins.Tests
             Assert.Equal(3, bookings.Length);
             for (int i = 0; i < 3; i++)
             {
-                Assert.Equal(Draft, bookings[i].GetAttributeValue<OptionSetValue>("ye_status").Value);
+                Assert.Equal(Confirmed, bookings[i].GetAttributeValue<OptionSetValue>("ye_status").Value);
+                Assert.Equal(AwaitingPayment, bookings[i].GetAttributeValue<OptionSetValue>("ye_paymentstatus").Value);
+                Assert.Equal(facility.Id, bookings[i].GetAttributeValue<EntityReference>("ye_facility").Id);
+                Assert.Equal(deal.Id, bookings[i].GetAttributeValue<EntityReference>("ye_opportunity").Id);
+                Assert.StartsWith($"Session {i + 1} of 3", bookings[i].GetAttributeValue<string>("ye_schedulingnote"));
                 Assert.Equal(Start.AddDays(i * stepDays), bookings[i].GetAttributeValue<DateTime>("ye_starttime"));
                 Assert.Equal(Start.AddDays(i * stepDays).AddHours(1.5), bookings[i].GetAttributeValue<DateTime>("ye_endtime"));
                 Assert.Equal(person.Id, bookings[i].GetAttributeValue<EntityReference>("ye_customer").Id);
@@ -290,6 +294,8 @@ namespace YE.Plugins.Tests
             Assert.Equal(2, result.Created);
             Assert.Equal(1, result.Unscheduled);
             var untimed = BookingsOf(deal).Single(b => !b.Contains("ye_starttime"));
+            Assert.Equal(Draft, untimed.GetAttributeValue<OptionSetValue>("ye_status").Value);
+            Assert.All(BookingsOf(deal).Where(b => b.Contains("ye_starttime")), b => Assert.Equal(Confirmed, b.GetAttributeValue<OptionSetValue>("ye_status").Value));
             Assert.Contains("Session 2 of 3", untimed.GetAttributeValue<string>("ye_schedulingnote"));
             Assert.Contains("already booked", untimed.GetAttributeValue<string>("ye_schedulingnote"));
         }
