@@ -10,7 +10,7 @@ A Dynamics 365 / Dataverse solution for a sports facility business: facilities, 
 All nine requirements, plus these optional extras: plugin unit tests, the unpacked solution in Git, and a note on loading historical bookings (below). On top of the brief:
 
 - Sales and case cycles, each with a business process flow
-- Block bookings: one Draft booking per session of a won deal
+- Block bookings: one Confirmed booking per session of a won deal, whether the deal started on the portal or in the CRM
 - Payment tracking and refunds
 - Automatic handling of bookings affected by maintenance
 - Case escalation
@@ -30,7 +30,7 @@ All nine requirements, plus these optional extras: plugin unit tests, the unpack
 | 2 | Data model | Configuration: tables Facility, Booking and Membership. Facility Type is a **global choice**. Facility code is an **alternate key**. Member is a lookup to **Contact** (or Account for corporate bookings) | A global choice can be reused on other tables with no lookup table. The alternate key lets the external system call `/ye_facilities(ye_facilitycode='P-01')` with no custom API. Members stay in Contact, where people are already tracked |
 | 3 | Prevent double-booking | **Plugin** (pre-operation, synchronous, Create + Update) | Only a server-side, in-transaction check holds for the form, imports and API calls alike, and it can't be bypassed from the browser. Its lookups run as SYSTEM, so a user can't double-book over bookings they can't see. The thrown message tells the user which booking clashes |
 | 4 | Price the booking | **Plugin** (pre-operation, runs after validation) | The price needs the facility's rate and the member's active membership, which are other tables, so a calculated column or business rule can't produce it. It re-prices on every reschedule. Total price is read-only on the form |
-| 5 | Sales hand-off | **Cloud flow** on Opportunity won, which calls the **Custom API** `ye_CreateBlockBookings` | The flow is visible and easy to change. The Custom API holds the per-session scheduling logic, which is too involved for flow actions. It's idempotent, so re-winning a deal doesn't create duplicates |
+| 5 | Sales hand-off | **Cloud flow** on Opportunity won, which calls the **Custom API** `ye_CreateBlockBookings`. Each scheduled session is booked as **Confirmed**, linked back to the opportunity | The flow is visible and easy to change. The Custom API holds the per-session scheduling logic, which is too involved for flow actions. It's idempotent, so re-winning a deal doesn't create duplicates |
 | 6 | Booking form | Hourly rate: Facility **quick view form**. End before start: **business rule** (entity scope). Cancellation reason: **business rule** | A quick view form shows related data with no code. Business rules with entity scope are also enforced on the server, so the portal and the API get them too. The cancellation rule is configured, as the brief required |
 | 7 | Maintenance | Case with a Facility lookup, **routing rule** to the *Facility Maintenance* queue, and **cloud flows** that set the facility's status | Queues and routing are the platform's own work-distribution features. Status sync is asynchronous by nature, so flows fit. The overlap plugin refuses bookings for a facility under maintenance, and the facility is released only when no other open case still has it out of service |
 | 8 | Security | **Configuration:** business units and roles (next section) | Location is a business unit, so "own location" maps onto business-unit privilege depth, the platform's own mechanism, with no code |
@@ -67,13 +67,13 @@ Assembly `YE.Plugins` (net462, signed). All steps are synchronous, pre-operation
 | `BookingPricingPlugin` | Create, Update of `ye_booking` (facility, member, start, end, status) | Sets total price to duration × hourly rate, less the membership discount for a contact member with an active membership. The price is frozen once the booking is completed or cancelled |
 | `BookingPaymentPlugin` | Update of `ye_booking` (status) | When a paid booking is cancelled, sets its payment status to *Refund Due* |
 | `OpportunityPricingPlugin` | Create, Update of `opportunity` (facility, sessions, session hours) | Sets list price to sessions × hours × hourly rate. Proposal value follows the list price until the salesperson negotiates it |
-| `CreateBlockBookingsApi` | Custom API `ye_CreateBlockBookings` | Turns a won deal into one Draft booking per session (weekly, fortnightly or daily). A session whose slot is taken, or whose facility is closed, becomes an untimed Draft with a note for the coordinator |
+| `CreateBlockBookingsApi` | Custom API `ye_CreateBlockBookings` | Turns a won deal into one **Confirmed** booking per session (weekly, fortnightly or daily), with its times, member, facility and opportunity, awaiting payment; the pricing plugin prices each one. A session whose slot is taken, or whose facility is closed, becomes an untimed Draft with a note for the coordinator. A deal with no schedule gets a single untimed Draft |
 
 ## Active flows
 
 | Flow | Trigger | What it does |
 |---|---|---|
-| YE - Opportunity Won: Create Draft Booking | Opportunity won | Calls `ye_CreateBlockBookings` to create the Draft bookings, unless the deal already has bookings |
+| YE - Opportunity Won: Create Draft Booking | Opportunity won | Calls `ye_CreateBlockBookings` to book the deal's sessions, unless the deal already has bookings |
 | YE - Block Booking Lost: Follow-up Task | Block booking opportunity lost | Creates a follow-up task for the salesperson |
 | YE - Web Enquiry: Assign to Corporate Sales | Portal creates a lead | Assigns the lead to the Corporate Sales Team |
 | YE - Web Enquiry: Follow-up Task | Web lead created | Creates a call-back task |
@@ -90,7 +90,9 @@ The two business process flows, *YE Corporate Booking Process* and *YE Facility 
 ## Assumptions
 
 - A membership belongs to a person, so the discount applies to contact members only. The discount percentage is stored on the membership.
-- Draft bookings (from the sales hand-off) may have no times. Every other status requires them (business rule).
+- The brief asks for a draft booking when a deal is won. Here each scheduled session is booked as Confirmed straight away, so the coordinator only handles the sessions that couldn't be placed, which stay as untimed Drafts.
+- The session schedule (first session, hours per session, frequency) comes from the portal enquiry or is entered on the opportunity, and is copied from lead to opportunity on qualify.
+- Draft bookings may have no times. Every other status requires them (business rule).
 - Portal customers aren't Dataverse users. They manage a booking with its reference and email. This is fine for the exercise but not hardened for production.
 
 ## Loading 500 historical bookings
