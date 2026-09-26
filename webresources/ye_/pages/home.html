@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sales &amp; bookings</title>
+  <style>
+    :root {
+      --bg: #faf9f8; --card: #ffffff; --text: #242424; --muted: #616161; --border: #e0e0e0;
+      --brand: #0e7a4d; --brand-hover: #0a633e; --brand-soft: #e3f3ea; --warn: #8a5600; --warn-soft: #fff4ce;
+      --radius: 8px; --shadow: 0 1px 2px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, Roboto, Arial, sans-serif; font-size: 14px; }
+    main { max-width: 1200px; margin: 0 auto; padding: 20px 24px 40px; }
+    h1 { font-size: 24px; font-weight: 600; margin: 0 0 4px; }
+    h2 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; margin: 16px 0; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+    .start { border-top: 4px solid var(--brand); }
+    .start ol { margin: 12px 0 16px; padding-left: 20px; line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    button { font: inherit; cursor: pointer; border-radius: 4px; padding: 8px 16px; min-height: 36px; border: 1px solid var(--border); background: var(--card); color: var(--text); display: inline-flex; align-items: center; gap: 8px; }
+    button:hover { background: #f3f2f1; }
+    button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    button.primary { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 600; }
+    button.primary:hover { background: var(--brand-hover); }
+    .book { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; background: linear-gradient(135deg, #0e7a4d, #1b9a67); color: #fff; border: none; }
+    .book p { margin: 0; opacity: .92; }
+    .book button { background: #fff; color: var(--brand); border: none; font-weight: 700; font-size: 16px; min-height: 48px; padding: 10px 22px; align-self: flex-start; }
+    .book button:hover { background: #f0faf5; }
+    .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .tile { text-align: left; display: block; width: 100%; padding: 16px; border-radius: var(--radius); box-shadow: var(--shadow); min-height: 0; }
+    .tile .n { display: block; font-size: 28px; font-weight: 700; line-height: 1.1; margin-top: 6px; }
+    .tile .l { display: block; color: var(--muted); font-size: 13px; }
+    .tile.warn .n { color: var(--warn); }
+    .tile.warn { background: var(--warn-soft); border-color: #f2d58a; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+    th { font-weight: 600; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+    tbody tr { cursor: pointer; }
+    tbody tr:hover { background: #f3f2f1; }
+    .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 12px; font-weight: 600; }
+    .row-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .link { border: none; background: none; color: var(--brand); padding: 0; min-height: 0; font-weight: 600; }
+    .link:hover { background: none; text-decoration: underline; }
+    .empty { padding: 16px 0; color: var(--muted); }
+    .error { color: #a4262c; }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Sales &amp; bookings</h1>
+    <div class="muted">Start a group sales cycle, book a facility, or pick up where the team left off.</div>
+
+    <!-- Start the sales cycle or book a facility -->
+    <section class="hero">
+      <div class="card start">
+        <h2>Start the sales cycle</h2>
+        <div class="muted">Teams, clubs, schools and companies booking a block of sessions:</div>
+        <ol>
+          <li><strong>Qualify</strong> the enquiry (lead). Qualifying creates the account, contact and opportunity</li>
+          <li><strong>Develop</strong> and <strong>Propose</strong> the block booking</li>
+          <li><strong>Close as Won</strong>. The Draft booking is created for a coordinator to schedule</li>
+        </ol>
+        <div class="actions">
+          <button class="primary" id="newEnquiry">+ New group enquiry</button>
+          <button id="openEnquiries">Group enquiries</button>
+          <button id="openDeals">Open block bookings</button>
+        </div>
+      </div>
+      <div class="card book">
+        <div>
+          <h2>Book a facility</h2>
+          <p>A single slot for a member: pick the facility and times; price and availability are checked when you save.</p>
+        </div>
+        <button id="bookFacility">Book a facility</button>
+      </div>
+    </section>
+
+    <!-- Live counters -->
+    <section class="tiles" aria-label="Work in progress">
+      <button class="tile card" data-view="lead|Group Enquiries"><span class="l">Open group enquiries</span><span class="n" id="nEnquiries">–</span></button>
+      <button class="tile card" data-view="opportunity|Open Block Bookings"><span class="l">Open block-booking deals</span><span class="n" id="nDeals">–</span></button>
+      <button class="tile card" data-view="ye_booking|Draft Bookings to Schedule"><span class="l">Drafts to schedule</span><span class="n" id="nDrafts">–</span></button>
+      <button class="tile card warn" data-view="ye_facility|Facilities Out of Service"><span class="l">Facilities out of service</span><span class="n" id="nClosed">–</span></button>
+    </section>
+
+    <!-- Latest enquiries -->
+    <section class="card">
+      <div class="row-head">
+        <h2>Latest group enquiries</h2>
+        <div class="actions">
+          <button class="link" id="newCase">Log a maintenance case</button>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>Name</th><th>Organisation</th><th>Facility</th><th>Group</th><th>Sessions</th><th>Source</th><th>Owner</th><th>Received</th></tr></thead>
+        <tbody id="enquiries"><tr><td colspan="8" class="empty">Loading…</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+  <!-- Page scripts -->
+  <script src="../scripts/commands.js"></script>
+  <script src="../scripts/home.js"></script>
+</body>
+</html>
