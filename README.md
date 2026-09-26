@@ -3,7 +3,7 @@
 A Dynamics 365 / Dataverse solution for a sports facility business: facilities, memberships and bookings; a sales cycle for group and corporate block bookings; a case cycle for facility problems; and a customer portal on Vercel.
 
 - **CRM:** model-driven app *YE Sports Facility* in `https://yesportsfacilitydev.crm4.dynamics.com`, solution **YESportsFacility** (publisher *YE*, prefix `ye`)
-- **Portal:** https://ye-sports-portal.vercel.app (Next.js, `portal/`)
+- **Portal:** https://ye-sports-portal.vercel.app (Next.js, `portal/`), live and running
 
 ## What was built
 
@@ -154,8 +154,15 @@ pac solution unpack --zipfile dist/YESportsFacility.zip --folder solution --pack
 | `DATAVERSE_TENANT_ID` | Entra tenant |
 | `DATAVERSE_USERNAME`, `DATAVERSE_PASSWORD` | Service account that signs in (ROPC) |
 | `DATAVERSE_CALLER_ID` | The Portal Integration user's `systemuserid`, impersonated so the portal only has that role's rights |
+| `DATAVERSE_SECRET_KEY` | Key that decrypts `enc:v1:` values (see below) |
 
 Or use client credentials (`DATAVERSE_CLIENT_ID` + `DATAVERSE_CLIENT_SECRET`) when a secret is available.
+
+**Encrypted password:** `DATAVERSE_PASSWORD` (and `DATAVERSE_CLIENT_SECRET`) can be stored encrypted as `enc:v1:...` (AES-256-GCM). The portal decrypts it at runtime with `DATAVERSE_SECRET_KEY`, a base64 32-byte key. Keep the key outside the project: in a user environment variable locally, and in the Vercel project settings for production.
+
+```
+node encrypt-secret.mjs .env.local DATAVERSE_PASSWORD   # prints a new key if DATAVERSE_SECRET_KEY isn't set
+```
 
 ```
 cd portal
