@@ -17,6 +17,7 @@
   <AppModuleSiteMaps />
   <AppModules />
   <EntityDataProviders />
+  <CanvasApps />
   <connectionreferences>
     <connectionreference connectionreferencelogicalname="ye_sharedcommondataserviceforapps_booking">
       <connectionreferencedisplayname>YE Sports Facility - Dataverse (booking flows)</connectionreferencedisplayname>

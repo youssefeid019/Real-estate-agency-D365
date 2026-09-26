@@ -117,6 +117,7 @@
       <RootComponent type="29" id="{e5e46d58-d1b9-f111-aaaf-7ced8d49c94e}" behavior="0" />
       <RootComponent type="29" id="{f10409e6-2ec3-4731-ba1b-5eb1748c0830}" behavior="0" />
       <RootComponent type="29" id="{f3e7665e-d1b9-f111-aaaf-7ced8d49c94e}" behavior="0" />
+      <RootComponent type="300" schemaName="ye_todaysbookings_8c1d4" behavior="0" />
       <RootComponent type="61" schemaName="ye_/icons/account.svg" behavior="0" />
       <RootComponent type="61" schemaName="ye_/icons/booking.svg" behavior="0" />
       <RootComponent type="61" schemaName="ye_/icons/enquiry.svg" behavior="0" />
