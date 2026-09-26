@@ -114,7 +114,7 @@
                 </section>
                 <section name="schedule" showlabel="true" showbar="false" IsUserDefined="0" id="{5af3a62b-9632-a522-a21c-6d7dea570aff}">
                   <labels>
-                    <label description="Session schedule (Draft bookings are generated from this when won)" languagecode="1033" />
+                    <label description="Session schedule (each session is booked as Confirmed when won)" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
@@ -252,7 +252,7 @@
       <LocalizedName description="YE Block Booking" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Block-booking deal for the YE Corporate Booking Process; won deals create the Draft booking." languagecode="1033" />
+      <Description description="Block-booking deal for the YE Corporate Booking Process; won deals book each session as Confirmed." languagecode="1033" />
     </Descriptions>
   </systemform>
 </forms>

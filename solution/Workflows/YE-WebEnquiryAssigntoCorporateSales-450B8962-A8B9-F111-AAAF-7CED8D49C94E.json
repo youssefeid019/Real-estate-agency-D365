@@ -26,12 +26,15 @@
       },
       "triggers": {
         "When_the_portal_creates_an_enquiry": {
+          "metadata": {
+            "operationMetadataId": "1598e285-c00b-4e30-ad8b-bf44d0dbd666"
+          },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "SubscribeWebhookTrigger"
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "subscriptionRequest/message": 1,
@@ -45,13 +48,16 @@
       },
       "actions": {
         "Assign_to_Corporate_Sales_Team": {
-          "type": "OpenApiConnection",
           "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "dbc9bf94-3641-4ef0-a382-54cbcf6650cc"
+          },
+          "type": "OpenApiConnection",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "UpdateRecord"
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "entityName": "leads",
@@ -63,7 +69,7 @@
         }
       }
     },
-    "templateName": null
+    "templateName": ""
   },
   "schemaVersion": "1.0.0.0"
 }

@@ -368,6 +368,18 @@
         <Required type="1" schemaName="lead" displayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)">
           <package appName="msdynce_LeadManagement" version="9.0.26081.10001">msdynce_LeadManagementAnchor (9.0.26081.10001)</package>
         </Required>
+        <Dependent type="2" schemaName="ye_firstsession" displayName="First Session" parentSchemaName="lead" parentDisplayName="Lead" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="lead" displayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)">
+          <package appName="msdynce_LeadManagement" version="9.0.26081.10001">msdynce_LeadManagementAnchor (9.0.26081.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="ye_frequency" displayName="Frequency" parentSchemaName="lead" parentDisplayName="Lead" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="lead" displayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)">
+          <package appName="msdynce_LeadManagement" version="9.0.26081.10001">msdynce_LeadManagementAnchor (9.0.26081.10001)</package>
+        </Required>
         <Dependent type="2" schemaName="ye_groupsize" displayName="Group Size" parentSchemaName="lead" parentDisplayName="Lead" />
       </MissingDependency>
       <MissingDependency>
@@ -375,6 +387,12 @@
           <package appName="msdynce_LeadManagement" version="9.0.26081.10001">msdynce_LeadManagementAnchor (9.0.26081.10001)</package>
         </Required>
         <Dependent type="2" schemaName="ye_preferredstart" displayName="Preferred Start" parentSchemaName="lead" parentDisplayName="Lead" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="lead" displayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)">
+          <package appName="msdynce_LeadManagement" version="9.0.26081.10001">msdynce_LeadManagementAnchor (9.0.26081.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="ye_sessionhours" displayName="Hours per Session" parentSchemaName="lead" parentDisplayName="Lead" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="lead" displayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)">

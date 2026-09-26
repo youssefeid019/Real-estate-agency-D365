@@ -26,12 +26,15 @@
       },
       "triggers": {
         "When_a_facility_is_closed_for_maintenance": {
+          "metadata": {
+            "operationMetadataId": "651413fb-9e3d-43d5-bcec-a29d0c83803b"
+          },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "SubscribeWebhookTrigger"
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "subscriptionRequest/message": 3,
@@ -46,13 +49,16 @@
       },
       "actions": {
         "Get_facility_now": {
-          "type": "OpenApiConnection",
           "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "3b26d13a-88b5-4a31-a81d-7ed428fdd228"
+          },
+          "type": "OpenApiConnection",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "GetItem"
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "entityName": "ye_facilities",
@@ -63,13 +69,16 @@
           }
         },
         "List_open_out_of_service_cases": {
-          "type": "OpenApiConnection",
           "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "4024f7ed-4338-4992-a65a-47d332a826fe"
+          },
+          "type": "OpenApiConnection",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "ListRecords"
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "entityName": "incidents",
@@ -81,7 +90,33 @@
           }
         },
         "If_still_closed_and_no_case_covers_it": {
-          "type": "If",
+          "actions": {
+            "Open_maintenance_case": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "46b86056-b9c8-4506-89b1-2b2592c796dc"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "incidents",
+                  "item/title": "Out of service: @{triggerOutputs()?['body/ye_name']}",
+                  "item/customerid_account@odata.bind": "/accounts(0dae39ff-b1b9-f111-aaaf-7ced8d2c3b00)",
+                  "item/description": "The facility was set to Under Maintenance without an open maintenance case. Record what is wrong, repair it and resolve this case to reopen the facility for bookings.",
+                  "item/ownerid@odata.bind": "/teams(3e0b8962-a8b9-f111-aaaf-7ced8d49c94e)",
+                  "item/prioritycode": 1,
+                  "item/ye_facility@odata.bind": "/ye_facilities(@{triggerOutputs()?['body/ye_facilityid']})",
+                  "item/ye_takesoutofservice": true
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
           "runAfter": {
             "Get_facility_now": [
               "Succeeded"
@@ -106,37 +141,14 @@
               }
             ]
           },
-          "actions": {
-            "Open_maintenance_case": {
-              "type": "OpenApiConnection",
-              "runAfter": {},
-              "inputs": {
-                "host": {
-                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                  "connectionName": "shared_commondataserviceforapps",
-                  "operationId": "CreateRecord"
-                },
-                "parameters": {
-                  "entityName": "incidents",
-                  "item/title": "Out of service: @{triggerOutputs()?['body/ye_name']}",
-                  "item/description": "The facility was set to Under Maintenance without an open maintenance case. Record what is wrong, repair it and resolve this case to reopen the facility for bookings.",
-                  "item/ye_facility@odata.bind": "/ye_facilities(@{triggerOutputs()?['body/ye_facilityid']})",
-                  "item/ye_takesoutofservice": true,
-                  "item/prioritycode": 1,
-                  "item/customerid_account@odata.bind": "/accounts(0dae39ff-b1b9-f111-aaaf-7ced8d2c3b00)",
-                  "item/ownerid@odata.bind": "/teams(3e0b8962-a8b9-f111-aaaf-7ced8d49c94e)"
-                },
-                "authentication": "@parameters('$authentication')"
-              }
-            }
+          "metadata": {
+            "operationMetadataId": "5eefa242-25da-4e23-9d34-ef03309008bf"
           },
-          "else": {
-            "actions": {}
-          }
+          "type": "If"
         }
       }
     },
-    "templateName": null
+    "templateName": ""
   },
   "schemaVersion": "1.0.0.0"
 }

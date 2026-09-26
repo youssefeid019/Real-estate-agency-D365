@@ -26,12 +26,15 @@
       },
       "triggers": {
         "When_a_case_takes_its_facility_out_of_service": {
+          "metadata": {
+            "operationMetadataId": "67c9c0e3-745c-4b52-bf22-de6c2b72710d"
+          },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "SubscribeWebhookTrigger"
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "subscriptionRequest/message": 4,
@@ -46,13 +49,16 @@
       },
       "actions": {
         "Set_facility_Under_Maintenance": {
-          "type": "OpenApiConnection",
           "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e7cb35ab-fe04-42e9-8786-811eca5de638"
+          },
+          "type": "OpenApiConnection",
           "inputs": {
             "host": {
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "UpdateRecord"
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
               "entityName": "ye_facilities",
@@ -64,7 +70,7 @@
         }
       }
     },
-    "templateName": null
+    "templateName": ""
   },
   "schemaVersion": "1.0.0.0"
 }

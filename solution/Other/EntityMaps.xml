@@ -9,12 +9,24 @@
         <AttributeTarget>ye_facility</AttributeTarget>
       </AttributeMap>
       <AttributeMap>
+        <AttributeSource>ye_firstsession</AttributeSource>
+        <AttributeTarget>ye_firstsession</AttributeTarget>
+      </AttributeMap>
+      <AttributeMap>
+        <AttributeSource>ye_frequency</AttributeSource>
+        <AttributeTarget>ye_frequency</AttributeTarget>
+      </AttributeMap>
+      <AttributeMap>
         <AttributeSource>ye_groupsize</AttributeSource>
         <AttributeTarget>ye_groupsize</AttributeTarget>
       </AttributeMap>
       <AttributeMap>
         <AttributeSource>ye_preferredstart</AttributeSource>
         <AttributeTarget>ye_preferredstart</AttributeTarget>
+      </AttributeMap>
+      <AttributeMap>
+        <AttributeSource>ye_sessionhours</AttributeSource>
+        <AttributeTarget>ye_sessionhours</AttributeTarget>
       </AttributeMap>
       <AttributeMap>
         <AttributeSource>ye_sessions</AttributeSource>

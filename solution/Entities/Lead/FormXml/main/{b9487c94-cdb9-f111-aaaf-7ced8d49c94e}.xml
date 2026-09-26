@@ -135,6 +135,30 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{efa57cbf-fd2d-cec0-c3a9-650784a87f48}">
+                        <labels>
+                          <label description="First Session" languagecode="1033" />
+                        </labels>
+                        <control id="ye_firstsession" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ye_firstsession" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c9519550-4be6-1fab-159f-e538e79c252b}">
+                        <labels>
+                          <label description="Hours per Session" languagecode="1033" />
+                        </labels>
+                        <control id="ye_sessionhours" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="ye_sessionhours" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{03bd4683-97ab-4f4e-f770-ca6f4ac65ddb}">
+                        <labels>
+                          <label description="Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="ye_frequency" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ye_frequency" />
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{5463675d-c45e-3ad6-67cd-5cd4244a1371}">
                         <labels>
                           <label description="Message" languagecode="1033" />
