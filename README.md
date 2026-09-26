@@ -75,12 +75,3 @@ npm run dev
 
 Plugin unit tests: `dotnet test plugins/YE.Plugins.Tests`.
 
-## Loading 500 historical bookings
-
-I'd use a dataflow keyed on the facility code (the alternate key) and the member's email, loading in date order. The overlap plugin will reject real clashes in the old data, which is useful: those rows go back to the business to fix.
-
-## With another week
-
-I'd build the canvas app, connect the emails, and set up a pipeline that builds, runs the tests and exports the solution, with deployment settings so an import needs no manual steps.
-
-The weakest part is the portal's sign-in. Customers identify with a booking reference and email, and the portal connects to Dynamics with a service account password. A real release would use proper customer accounts and an app registration with a certificate.
