@@ -1,0 +1,91 @@
+FacilitiesScreen As screen:
+    Fill: =RGBA(246, 248, 247, 1)
+    OnVisible: =If(IsBlank(varDay), Set(varDay, Today()))
+
+    lblTitle As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(14, 122, 77, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =96
+        PaddingLeft: =24
+        Size: =24
+        Text: ="Today's bookings"
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+    lblPrompt As label:
+        Color: =RGBA(91, 107, 99, 1)
+        Height: =56
+        PaddingLeft: =24
+        Size: =15
+        Text: ="Choose a facility · " & Text(Today(), "dddd d mmmm")
+        Width: =Parent.Width
+        X: =0
+        Y: =96
+        ZIndex: =2
+
+    galFacilities As gallery.galleryVertical:
+        Height: =Parent.Height - 152
+        Items: =Sort(Facilities, ye_name)
+        Layout: =Layout.Vertical
+        OnSelect: =Set(varFacility, ThisItem); Set(varDay, Today()); Navigate(BookingsScreen, ScreenTransition.Cover)
+        TemplatePadding: =8
+        TemplateSize: =112
+        Width: =Parent.Width
+        X: =0
+        Y: =152
+        ZIndex: =3
+
+        lblFacilityCard As label:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            Text: =""
+            Width: =Parent.TemplateWidth - 32
+            X: =16
+            Y: =0
+            ZIndex: =1
+
+        lblFacilityName As label:
+            Color: =RGBA(16, 38, 27, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.ye_name
+            Width: =Parent.TemplateWidth - 250
+            X: =32
+            Y: =14
+            ZIndex: =2
+
+        lblFacilityInfo As label:
+            Color: =If(Text(ThisItem.ye_availabilitystatus) = "Available", RGBA(91, 107, 99, 1), RGBA(180, 83, 9, 1))
+            Height: =40
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =Text(ThisItem.ye_facilitytype) & " · " & Text(ThisItem.ye_availabilitystatus)
+            Width: =Parent.TemplateWidth - 250
+            X: =32
+            Y: =56
+            ZIndex: =3
+
+        lblFacilityCount As label:
+            Align: =Align.Right
+            Color: =RGBA(14, 122, 77, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            PaddingRight: =16
+            Size: =15
+            Text: |
+                =With(
+                    {n: CountRows(Filter(Bookings, ye_facility.ye_facilityid = ThisItem.ye_facilityid, ye_starttime >= Today(), ye_starttime < DateAdd(Today(), 1, TimeUnit.Days)))},
+                    n & If(n = 1, " booking", " bookings") & "  ›"
+                )
+            Width: =200
+            X: =Parent.TemplateWidth - 232
+            Y: =0
+            ZIndex: =4
+

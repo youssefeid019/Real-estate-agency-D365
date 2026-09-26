@@ -1,0 +1,152 @@
+BookingsScreen As screen:
+    Fill: =RGBA(246, 248, 247, 1)
+
+    lblHeader As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(14, 122, 77, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =96
+        PaddingLeft: =88
+        Size: =22
+        Text: =varFacility.ye_name
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+    lblBack As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =96
+        OnSelect: =Back()
+        Size: =32
+        Text: ="‹"
+        Width: =72
+        X: =0
+        Y: =0
+        ZIndex: =2
+
+    lblPrevDay As label:
+        Align: =Align.Center
+        Color: =RGBA(14, 122, 77, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        OnSelect: =Set(varDay, DateAdd(varDay, -1, TimeUnit.Days))
+        Size: =28
+        Text: ="‹"
+        Width: =80
+        X: =0
+        Y: =96
+        ZIndex: =3
+
+    lblDay As label:
+        Align: =Align.Center
+        Color: =RGBA(16, 38, 27, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        OnSelect: =Set(varDay, Today())
+        Size: =17
+        Text: =If(varDay = Today(), "Today, ", "") & Text(varDay, "ddd d mmm yyyy")
+        Width: =Parent.Width - 160
+        X: =80
+        Y: =96
+        ZIndex: =4
+
+    lblNextDay As label:
+        Align: =Align.Center
+        Color: =RGBA(14, 122, 77, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        OnSelect: =Set(varDay, DateAdd(varDay, 1, TimeUnit.Days))
+        Size: =28
+        Text: ="›"
+        Width: =80
+        X: =Parent.Width - 80
+        Y: =96
+        ZIndex: =5
+
+    galBookings As gallery.galleryVertical:
+        Height: =Parent.Height - 168
+        Items: |
+            =SortByColumns(
+                Filter(
+                    Filter(Bookings, ye_facility.ye_facilityid = varFacility.ye_facilityid, ye_starttime >= varDay, ye_starttime < DateAdd(varDay, 1, TimeUnit.Days)),
+                    Text(ye_status) <> "Cancelled"
+                ),
+                "ye_starttime"
+            )
+        Layout: =Layout.Vertical
+        TemplatePadding: =8
+        TemplateSize: =128
+        Width: =Parent.Width
+        X: =0
+        Y: =168
+        ZIndex: =6
+
+        lblBookingCard As label:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.TemplateHeight
+            Text: =""
+            Width: =Parent.TemplateWidth - 32
+            X: =16
+            Y: =0
+            ZIndex: =1
+
+        lblBookingTime As label:
+            Color: =RGBA(16, 38, 27, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =48
+            Size: =20
+            Text: =Text(ThisItem.ye_starttime, "hh:mm") & " – " & Text(ThisItem.ye_endtime, "hh:mm")
+            Width: =Parent.TemplateWidth - 200
+            X: =32
+            Y: =12
+            ZIndex: =2
+
+        lblBookingRef As label:
+            Color: =RGBA(91, 107, 99, 1)
+            Height: =36
+            Size: =14
+            Text: =ThisItem.ye_bookingreference & If(IsBlank(ThisItem.ye_paymentstatus), "", " · " & Text(ThisItem.ye_paymentstatus))
+            Width: =Parent.TemplateWidth - 64
+            X: =32
+            Y: =60
+            ZIndex: =3
+
+        lblBookingStatus As label:
+            Align: =Align.Right
+            Color: =If(Text(ThisItem.ye_status) = "Confirmed", RGBA(14, 122, 77, 1), RGBA(91, 107, 99, 1))
+            FontWeight: =FontWeight.Semibold
+            Height: =48
+            PaddingRight: =16
+            Size: =15
+            Text: =Text(ThisItem.ye_status)
+            Width: =160
+            X: =Parent.TemplateWidth - 192
+            Y: =12
+            ZIndex: =4
+
+        lblBookingPrice As label:
+            Align: =Align.Right
+            Color: =RGBA(16, 38, 27, 1)
+            Height: =36
+            PaddingRight: =16
+            Size: =14
+            Text: =Text(ThisItem.ye_totalprice, "0.00")
+            Width: =160
+            X: =Parent.TemplateWidth - 192
+            Y: =60
+            ZIndex: =5
+
+    lblEmpty As label:
+        Align: =Align.Center
+        Color: =RGBA(91, 107, 99, 1)
+        Height: =80
+        Size: =16
+        Text: ="No bookings on this day"
+        Visible: =CountRows(galBookings.AllItems) = 0
+        Width: =Parent.Width
+        X: =0
+        Y: =220
+        ZIndex: =7
+
